@@ -311,21 +311,22 @@ section:first-child::before {
 
 .countdown-timer {
     display: flex;
-    gap: clamp(0.5rem, 3vw, 1.5rem);
+    gap: clamp(0.3rem, 2vw, 0.5rem);
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 .time-unit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: clamp(55px, 15vw, 80px);
+    min-width: clamp(50px, 12vw, 70px);
 }
 
 .time-unit span {
     font-family: var(--font-title);
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
     font-weight: 600;
     color: var(--primary-color);
     line-height: 1;
@@ -333,11 +334,20 @@ section:first-child::before {
 
 .time-unit label {
     font-family: var(--font-text);
-    font-size: clamp(0.6rem, 2vw, 0.75rem);
+    font-size: clamp(0.55rem, 1.5vw, 0.7rem);
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #888;
+    opacity: 0.5;
     margin-top: 0.3rem;
+}
+
+.separator {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    color: var(--accent-color);
+    opacity: 0.4;
+    margin-top: -1rem;
 }
 
 .countdown-footer {
