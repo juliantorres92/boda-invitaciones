@@ -6,7 +6,7 @@
     --primary-color: #2c3e50;
     --accent-color: #6B7B59;
     --text-color: #333;
-    --light-bg: var(--beige);
+    --light-bg: var(--avena);
     --white: #FDFBF7;
     --font-title: 'Playfair Display', Georgia, serif;
     --font-subtitle: 'Cinzel', serif;
@@ -56,11 +56,26 @@ section {
     align-items: center;
     position: relative;
     scroll-snap-align: start;
+    background: var(--avena);
 }
 
 .section-divider {
     margin-top: auto;
     padding-bottom: 0.5rem;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-divider span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0.5;
+    display: inline-block;
+    margin: 0 4px;
 }
 
 @media (max-width: 600px) {
@@ -70,21 +85,47 @@ section {
         min-height: 100dvh;
         padding: 3rem 1rem;
     }
+    
+    .section-divider {
+        bottom: 2rem;
+    }
 }
 
-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: var(--accent-color);
+.section-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
 }
 
-section:first-child::before {
-    display: none;
+.section-subtitle {
+    font-family: var(--font-subtitle);
+    font-size: clamp(0.7rem, 2vw, 0.85rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.section-text {
+    font-family: var(--font-text);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.section-intro {
+    font-family: var(--font-title);
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    font-style: italic;
+    color: var(--primary-color);
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto 1rem auto;
+    opacity: 0.85;
 }
 
 .cover {
@@ -98,12 +139,9 @@ section:first-child::before {
     justify-content: center;
 }
 
-.cover::before {
-    display: none;
-}
-
-.cover-content {
-    padding: 2rem;
+.cover .section-divider span {
+    background: var(--beige);
+    opacity: 0.6;
 }
 
 .save-the-date {
@@ -131,35 +169,14 @@ section:first-child::before {
     text-transform: uppercase;
 }
 
-.welcome {
-    background: var(--white);
-}
-
-.section-intro {
-    font-family: var(--font-title);
-    font-size: clamp(0.95rem, 3vw, 1.2rem);
-    font-style: italic;
-    color: var(--primary-color);
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto 1rem auto;
-    opacity: 0.8;
-}
-
-.welcome-text {
-    font-family: var(--font-text);
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    opacity: 0.9;
-}
-
 .guest-name {
     font-family: var(--font-subtitle);
     font-size: clamp(1rem, 3vw, 1.3rem);
     font-weight: 500;
     color: var(--accent-color);
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .cupos-info {
@@ -168,58 +185,12 @@ section:first-child::before {
     color: var(--text-color);
 }
 
-.families {
-    background: var(--beige);
-}
-
-.families h2 {
-    font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    font-weight: 400;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-}
-
-.family {
-    margin-bottom: 1.5rem;
-}
-
-.family-type {
-    font-family: var(--font-subtitle);
-    font-size: clamp(0.7rem, 2vw, 0.85rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent-color);
-    margin-bottom: 0.3rem;
-}
-
-.parents {
-    font-family: var(--font-text);
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    color: var(--primary-color);
-    line-height: 1.6;
-}
-
-.after-ceremony {
-    background: var(--white);
-}
-
-.after-text {
-    font-family: var(--font-title);
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    font-style: italic;
-    color: var(--primary-color);
-    opacity: 0.85;
-}
-
-.event {
-    background: var(--avena);
-}
-
 .event h2 {
     font-family: var(--font-title);
     font-size: clamp(1.3rem, 4vw, 1.6rem);
     font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
@@ -234,6 +205,8 @@ section:first-child::before {
     font-weight: 500;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .event-time {
@@ -267,16 +240,27 @@ section:first-child::before {
     color: var(--white);
 }
 
+.after-text {
+    font-family: var(--font-title);
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-style: italic;
+    color: var(--primary-color);
+    opacity: 0.85;
+}
+
 .dress-code {
-    background: var(--verde-oliva);
+    background: var(--verde-oliva) !important;
     color: var(--white);
 }
 
-.dress-code h2 {
-    font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.6rem);
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+.dress-code .section-intro {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.dress-code .section-divider span {
+    background: var(--beige);
+    opacity: 0.6;
 }
 
 .dress-code-text {
@@ -294,7 +278,7 @@ section:first-child::before {
 }
 
 .countdown {
-    background: var(--white);
+    background: var(--white) !important;
 }
 
 .countdown h2 {
@@ -302,6 +286,8 @@ section:first-child::before {
     font-size: clamp(1.3rem, 4vw, 1.8rem);
     font-weight: 400;
     font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
@@ -360,27 +346,19 @@ section:first-child::before {
     font-size: clamp(1rem, 3vw, 1.3rem);
     font-style: italic;
     color: var(--accent-color);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
-.confirmacion {
-    background: var(--beige);
-}
-
-.confirmacion h2 {
-    font-family: var(--font-title);
-    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
-    font-weight: 400;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+.confirmacion .section-intro {
+    margin-bottom: 2rem;
 }
 
 .confirm-text {
-    font-family: var(--font-title);
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    font-style: italic;
+    font-family: var(--font-text);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
     color: var(--text-color);
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    opacity: 0.8;
 }
 
 .whatsapp-btn {
@@ -406,6 +384,37 @@ section:first-child::before {
 
 .whatsapp-icon {
     font-size: 1.3rem;
+}
+
+.closing {
+    background: var(--verde-oliva) !important;
+    color: var(--white);
+}
+
+.closing .section-divider span {
+    background: var(--beige);
+    opacity: 0.6;
+}
+
+.closing-message {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.closing-invite {
+    font-family: var(--font-text);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.closing-names {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 6vw, 2.5rem);
+    font-style: italic;
+    color: var(--beige);
 }
 
 .footer {
@@ -449,47 +458,4 @@ section:first-child::before {
     width: 0%;
     z-index: 1000;
     transition: width 0.1s ease-out;
-}
-
-.section-divider {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 1rem 0;
-}
-
-.section-divider span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    opacity: 0.5;
-}
-
-.closing {
-    background: var(--verde-oliva);
-    color: var(--white);
-}
-
-.closing-message {
-    font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.closing-invite {
-    font-family: var(--font-text);
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-.closing-names {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 6vw, 2.5rem);
-    font-style: italic;
-    color: var(--beige);
 }
