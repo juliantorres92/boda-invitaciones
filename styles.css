@@ -124,6 +124,39 @@ section:first-child::before {
     color: var(--text-color);
 }
 
+.families {
+    background: var(--light-bg);
+}
+
+.families h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.family {
+    margin-bottom: 1.5rem;
+}
+
+.family-bride, .family-groom {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.parents {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
 .event {
     background: var(--light-bg);
 }
@@ -177,6 +210,15 @@ section:first-child::before {
     font-family: var(--font-sans);
     font-size: 0.85rem;
     color: #666;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 .dress-code {
