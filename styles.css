@@ -118,6 +118,10 @@ section {
     line-height: 1.6;
 }
 
+.family {
+    margin-bottom: 1.5rem;
+}
+
 .section-intro {
     font-family: var(--font-title);
     font-size: clamp(0.95rem, 3vw, 1.2rem);
