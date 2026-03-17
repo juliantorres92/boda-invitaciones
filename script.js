@@ -72,76 +72,20 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
-function initScrollAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+function initAnimations() {
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
             }
         });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
+    }, {
+        threshold: 0.3
     });
-}
 
-function initSwipeNavigation() {
-    let touchStartY = 0;
-    let touchEndY = 0;
-    let isSwiping = false;
-    const minSwipeDistance = 50;
-
-    document.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    document.addEventListener('touchend', (e) => {
-        if (isSwiping) return;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-        const swipeDistance = touchStartY - touchEndY;
-        
-        if (Math.abs(swipeDistance) < minSwipeDistance) return;
-
-        isSwiping = true;
-
-        const sections = document.querySelectorAll('section');
-        let currentIndex = 0;
-        
-        for (let i = 0; i < sections.length; i++) {
-            const rect = sections[i].getBoundingClientRect();
-            if (rect.top >= -window.innerHeight / 2 && rect.top <= window.innerHeight / 2) {
-                currentIndex = i;
-                break;
-            }
-        }
-
-        const targetIndex = swipeDistance > 0 ? currentIndex + 1 : currentIndex - 1;
-        
-        if (targetIndex >= 0 && targetIndex < sections.length) {
-            const targetSection = sections[targetIndex];
-            const targetPosition = targetSection.offsetTop;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-
-        setTimeout(() => {
-            isSwiping = false;
-        }, 800);
-    }
+    sections.forEach(section => observer.observe(section));
 }
 
 function initScrollProgress() {
@@ -167,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadGuestData();
     updateCountdown();
     setInterval(updateCountdown, 1000);
-    initScrollAnimations();
-    initSwipeNavigation();
+    initAnimations();
     initScrollProgress();
 });
