@@ -76,15 +76,13 @@ function initScrollAnimations() {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.2
+        threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 100);
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+                entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
@@ -97,6 +95,7 @@ function initScrollAnimations() {
 function initSwipeNavigation() {
     let touchStartY = 0;
     let touchEndY = 0;
+    let isSwiping = false;
     const minSwipeDistance = 50;
 
     document.addEventListener('touchstart', (e) => {
@@ -104,6 +103,7 @@ function initSwipeNavigation() {
     }, { passive: true });
 
     document.addEventListener('touchend', (e) => {
+        if (isSwiping) return;
         touchEndY = e.changedTouches[0].screenY;
         handleSwipe();
     }, { passive: true });
@@ -113,27 +113,34 @@ function initSwipeNavigation() {
         
         if (Math.abs(swipeDistance) < minSwipeDistance) return;
 
+        isSwiping = true;
+
         const sections = document.querySelectorAll('section');
-        const currentSection = [...sections].find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= -100 && rect.top <= 100;
-        });
-
-        if (!currentSection) return;
-
-        const currentIndex = [...sections].indexOf(currentSection);
-
-        if (swipeDistance > 0) {
-            const nextSection = sections[currentIndex + 1];
-            if (nextSection) {
-                nextSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else {
-            const prevSection = sections[currentIndex - 1];
-            if (prevSection) {
-                prevSection.scrollIntoView({ behavior: 'smooth' });
+        let currentIndex = 0;
+        
+        for (let i = 0; i < sections.length; i++) {
+            const rect = sections[i].getBoundingClientRect();
+            if (rect.top >= -window.innerHeight / 2 && rect.top <= window.innerHeight / 2) {
+                currentIndex = i;
+                break;
             }
         }
+
+        const targetIndex = swipeDistance > 0 ? currentIndex + 1 : currentIndex - 1;
+        
+        if (targetIndex >= 0 && targetIndex < sections.length) {
+            const targetSection = sections[targetIndex];
+            const targetPosition = targetSection.offsetTop;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        setTimeout(() => {
+            isSwiping = false;
+        }, 800);
     }
 }
 
