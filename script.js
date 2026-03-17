@@ -1,5 +1,5 @@
 const WEDDING_DATE = new Date('2026-05-02T16:00:00');
-const PHONE_NUMBER = '573108754432';
+const PHONE_NUMBER = '573013092189';
 
 async function loadGuestData() {
     const urlParams = new URLSearchParams(window.location.search);
