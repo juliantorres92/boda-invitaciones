@@ -93,7 +93,7 @@ section {
 
 .section-title {
     font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -103,7 +103,8 @@ section {
 
 .section-subtitle {
     font-family: var(--font-subtitle);
-    font-size: clamp(0.7rem, 2vw, 0.85rem);
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-color);
@@ -112,7 +113,7 @@ section {
 
 .section-text {
     font-family: var(--font-text);
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     color: var(--primary-color);
     line-height: 1.6;
 }
@@ -181,13 +182,13 @@ section {
 
 .cupos-info {
     font-family: var(--font-text);
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     color: var(--text-color);
 }
 
 .event h2 {
     font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.6rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -201,8 +202,8 @@ section {
 
 .event-place {
     font-family: var(--font-subtitle);
-    font-size: clamp(1rem, 3vw, 1.3rem);
-    font-weight: 500;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -211,14 +212,14 @@ section {
 
 .event-time {
     font-family: var(--font-text);
-    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-size: clamp(1rem, 4vw, 1.8rem);
     color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
 .event-address {
     font-family: var(--font-text);
-    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     color: #555;
 }
 
@@ -226,7 +227,7 @@ section {
     display: inline-block;
     margin-top: 1rem;
     font-family: var(--font-text);
-    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     color: var(--accent-color);
     text-decoration: underline;
     padding: 0.5rem 1rem;
@@ -265,7 +266,7 @@ section {
 
 .dress-code-text {
     font-family: var(--font-title);
-    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-style: italic;
     color: var(--beige);
     margin-bottom: 0.5rem;
@@ -273,7 +274,7 @@ section {
 
 .dress-code-detail {
     font-family: var(--font-text);
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     opacity: 0.9;
 }
 
@@ -283,7 +284,7 @@ section {
 
 .countdown h2 {
     font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 400;
     font-style: italic;
     text-transform: uppercase;
@@ -294,7 +295,7 @@ section {
 
 .countdown-subtitle {
     font-family: var(--font-text);
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     color: var(--accent-color);
     margin-bottom: 2rem;
     letter-spacing: 1px;
@@ -317,7 +318,7 @@ section {
 
 .time-unit span {
     font-family: var(--font-title);
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2.5rem, 10vw, 5rem);
     font-weight: 600;
     color: var(--primary-color);
     line-height: 1;
@@ -325,7 +326,7 @@ section {
 
 .time-unit label {
     font-family: var(--font-text);
-    font-size: clamp(0.55rem, 1.5vw, 0.7rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #888;
@@ -335,7 +336,7 @@ section {
 
 .separator {
     font-family: var(--font-title);
-    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     color: var(--accent-color);
     opacity: 0.4;
     margin-top: -1rem;
@@ -343,7 +344,7 @@ section {
 
 .countdown-footer {
     font-family: var(--font-title);
-    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-size: clamp(1rem, 4vw, 1.8rem);
     font-style: italic;
     color: var(--accent-color);
     margin-top: 1.5rem;
@@ -355,7 +356,7 @@ section {
 
 .confirm-text {
     font-family: var(--font-text);
-    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     color: var(--text-color);
     margin-top: 1.5rem;
     opacity: 0.8;
@@ -398,21 +399,21 @@ section {
 
 .closing-message {
     font-family: var(--font-title);
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-style: italic;
     margin-bottom: 1rem;
 }
 
 .closing-invite {
     font-family: var(--font-text);
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 3vw, 1.3rem);
     opacity: 0.9;
     margin-bottom: 2rem;
 }
 
 .closing-names {
     font-family: var(--font-title);
-    font-size: clamp(2rem, 6vw, 2.5rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-style: italic;
     color: var(--beige);
 }
