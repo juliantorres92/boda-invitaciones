@@ -1,86 +1,86 @@
 [
   {
-    "id": "luis-fernando-torres-nunez",
+    "id": "01-torres",
     "name": "Luis Fernando Torres Núñez",
     "cupos": 3
   },
   {
-    "id": "luis-fernando-torres-perdomo",
+    "id": "02-torres",
     "name": "Luis Fernando Torres Perdomo",
     "cupos": 3
   },
   {
-    "id": "karla-geraldine-torres-trujillo",
+    "id": "03-torres",
     "name": "Karla Geraldine Torres Trujillo",
     "cupos": 3
   },
   {
-    "id": "maria-luz-nunez",
+    "id": "04-nunez",
     "name": "María Luz Núñez",
     "cupos": 1
   },
   {
-    "id": "martha-cristina-perdomo-salas",
+    "id": "05-perdomo",
     "name": "Martha Cristina Perdomo Salas",
     "cupos": 2
   },
   {
-    "id": "gemma-otilia-perdomo-salas",
+    "id": "06-perdomo",
     "name": "Gemma Otilia Perdomo Salas",
     "cupos": 3
   },
   {
-    "id": "oscar-eduardo-chavarro-perdomo",
+    "id": "07-perdomo",
     "name": "Oscar Eduardo Chavarro Perdomo",
     "cupos": 3
   },
   {
-    "id": "omar-dussan-coronado",
+    "id": "08-dussan",
     "name": "Omar Dussan Coronado",
     "cupos": 2
   },
   {
-    "id": "andrea-katherine-ipuz-garcia",
+    "id": "09-ipuz",
     "name": "Andrea Katherine Ipuz Garcia",
     "cupos": 3
   },
   {
-    "id": "milena-dussan",
+    "id": "10-dussan",
     "name": "Milena Dussan",
     "cupos": 2
   },
   {
-    "id": "olvein-ipuz",
+    "id": "11-ipuz",
     "name": "Olvein Ipuz",
     "cupos": 3
   },
   {
-    "id": "nelson-javier-velasquez",
+    "id": "12-velasquez",
     "name": "Nelson Javier Velasquez",
     "cupos": 1
   },
   {
-    "id": "jeisson-leonardo-canacue",
+    "id": "13-canacue",
     "name": "Jeisson Leonardo Canacue",
     "cupos": 1
   },
   {
-    "id": "jorge-augusto-soza",
+    "id": "14-soza",
     "name": "Jorge Augusto Soza",
     "cupos": 2
   },
   {
-    "id": "silvia-dussan",
+    "id": "15-dussan",
     "name": "Silvia Dussan",
     "cupos": 2
   },
   {
-    "id": "lucila-ipuz",
+    "id": "16-ipuz",
     "name": "Lucila Ipuz",
     "cupos": 1
   },
   {
-    "id": "alejandro-guzman",
+    "id": "17-guzman",
     "name": "Alejandro Guzmán",
     "cupos": 2
   }

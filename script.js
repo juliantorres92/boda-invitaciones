@@ -3,7 +3,7 @@ const PHONE_NUMBER = '573013092189';
 
 async function loadGuestData() {
     const urlParams = new URLSearchParams(window.location.search);
-    const guestId = urlParams.get('id');
+    const guestId = urlParams.get('f');
 
     if (!guestId) {
         document.getElementById('guestName').textContent = '¡Bienvenido!';
