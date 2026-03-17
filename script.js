@@ -72,8 +72,95 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
 
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function initSwipeNavigation() {
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeDistance = touchStartY - touchEndY;
+        
+        if (Math.abs(swipeDistance) < minSwipeDistance) return;
+
+        const sections = document.querySelectorAll('section');
+        const currentSection = [...sections].find(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top >= -100 && rect.top <= 100;
+        });
+
+        if (!currentSection) return;
+
+        const currentIndex = [...sections].indexOf(currentSection);
+
+        if (swipeDistance > 0) {
+            const nextSection = sections[currentIndex + 1];
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            const prevSection = sections[currentIndex - 1];
+            if (prevSection) {
+                prevSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+}
+
+function initScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        progressBar.style.width = progress + '%';
+    }
+
+    window.addEventListener('scroll', () => {
+        requestAnimationFrame(updateProgress);
+    }, { passive: true });
+    
+    updateProgress();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadGuestData();
     updateCountdown();
     setInterval(updateCountdown, 1000);
+    initScrollAnimations();
+    initSwipeNavigation();
+    initScrollProgress();
 });

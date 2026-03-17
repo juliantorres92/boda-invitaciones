@@ -404,3 +404,25 @@ section:first-child::before {
     color: var(--beige);
     font-size: clamp(1rem, 3vw, 1.3rem) !important;
 }
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--verde-oliva);
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
