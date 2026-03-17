@@ -142,9 +142,9 @@ section:first-child::before {
     margin-bottom: 1.5rem;
 }
 
-.family-bride, .family-groom {
+.family-type {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-color);
@@ -153,7 +153,19 @@ section:first-child::before {
 
 .parents {
     font-family: var(--font-serif);
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+.after-ceremony {
+    background: var(--white);
+}
+
+.after-text {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
     color: var(--primary-color);
 }
 
