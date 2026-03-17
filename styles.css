@@ -38,9 +38,9 @@ body {
 }
 
 section {
-    padding: 3rem 1.5rem;
+    padding: 4rem 1.5rem;
     text-align: center;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,13 +272,20 @@ section:first-child::before {
 }
 
 .countdown h2 {
-    font-family: var(--font-subtitle);
-    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
     font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-style: italic;
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.countdown-subtitle {
+    font-family: var(--font-text);
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: var(--accent-color);
     margin-bottom: 2rem;
+    letter-spacing: 1px;
 }
 
 .countdown-timer {
@@ -310,6 +317,14 @@ section:first-child::before {
     letter-spacing: 1px;
     color: #888;
     margin-top: 0.3rem;
+}
+
+.countdown-footer {
+    font-family: var(--font-title);
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-style: italic;
+    color: var(--accent-color);
+    margin-top: 2rem;
 }
 
 .confirmacion {
