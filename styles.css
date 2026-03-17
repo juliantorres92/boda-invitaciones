@@ -1,0 +1,338 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #c9a962;
+    --text-color: #333;
+    --light-bg: #f9f7f4;
+    --white: #fff;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-serif);
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.invitation {
+    max-width: 100%;
+    min-height: 100vh;
+    background: var(--white);
+}
+
+section {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+section:first-child::before {
+    display: none;
+}
+
+.cover {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover::before {
+    display: none;
+}
+
+.cover-content {
+    padding: 2rem;
+}
+
+.save-the-date {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.names {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.date {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.welcome {
+    background: var(--white);
+}
+
+.welcome-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.guest-name {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.cupos-info {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.event {
+    background: var(--light-bg);
+}
+
+.event h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.event h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--accent-color);
+}
+
+.event-details {
+    font-family: var(--font-serif);
+}
+
+.event-date {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.event-time {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.event-place {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.event-address {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.dress-code {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.dress-code h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.dress-code-text {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.dress-code-detail {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.countdown {
+    background: var(--white);
+}
+
+.countdown h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.time-unit span {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.time-unit label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-top: 0.3rem;
+}
+
+.confirmacion {
+    background: var(--light-bg);
+}
+
+.confirmacion h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.confirm-text {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+    font-size: 1.3rem;
+}
+
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    min-height: auto;
+}
+
+.footer p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.hashtag {
+    color: var(--accent-color);
+    font-size: 1.2rem !important;
+}
+
+@media (max-width: 480px) {
+    .names {
+        font-size: 2.2rem;
+    }
+    
+    section {
+        padding: 2.5rem 1rem;
+    }
+    
+    .time-unit span {
+        font-size: 2rem;
+    }
+    
+    .time-unit {
+        min-width: 60px;
+    }
+}
