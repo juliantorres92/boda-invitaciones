@@ -271,35 +271,6 @@ section > .section-title {
 }
 }
 
-.dress-code {
-    background: var(--verde-oliva) !important;
-    color: var(--white);
-}
-
-.dress-code .section-intro {
-    color: var(--white);
-    opacity: 0.9;
-}
-
-.dress-code .section-divider span {
-    background: var(--beige);
-    opacity: 0.6;
-}
-
-.dress-code-text {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-style: italic;
-    color: var(--beige);
-    margin-bottom: 0.5rem;
-}
-
-.dress-code-detail {
-    font-family: var(--font-text);
-    font-size: var(--text-size);
-    opacity: 0.9;
-}
-
 .countdown {
     background: var(--white) !important;
 }
