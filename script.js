@@ -19,11 +19,7 @@ async function loadGuestData() {
 
         if (guest) {
             document.getElementById('guestName').textContent = `${guest.name}`;
-            
-            const cuposText = guest.cupos === 1 
-                ? 'Tu invitación tiene 1 cupo disponible'
-                : `Tu invitación tiene ${guest.cupos} cupos disponibles`;
-            document.getElementById('cuposInfo').textContent = cuposText;
+            document.getElementById('cuposInfo').textContent = guest.display;
             
             setupWhatsappLink(guest);
         } else {
@@ -41,8 +37,7 @@ function setupWhatsappLink(guest) {
     let message = 'Hola, confirmamos nuestra asistencia a la boda de Yessica y Julian. ';
     
     if (guest) {
-        message += `Nombre: ${guest.name}. `;
-        message += `Cupos: ${guest.cupos}. `;
+        message += `Nombre: ${guest.name}. Acompañantes: ${guest.display}. `;
     }
     
     const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;

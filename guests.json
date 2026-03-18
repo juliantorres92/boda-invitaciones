@@ -2,86 +2,86 @@
   {
     "id": "01-torres",
     "name": "Luis Fernando Torres Núñez",
-    "cupos": 3
+    "display": "Fernando Torres, esposa e hija"
   },
   {
     "id": "02-torres",
     "name": "Luis Fernando Torres Perdomo",
-    "cupos": 3
+    "display": "Luis Torres, novia e hija"
   },
   {
     "id": "03-torres",
-    "name": "Karla Geraldine Torres Trujillo",
-    "cupos": 3
+    "name": "Karla Geraldine Torres",
+    "display": "Karla Torres, esposo e hija"
   },
   {
     "id": "04-nunez",
     "name": "María Luz Núñez",
-    "cupos": 1
+    "display": "María Luz Núñez"
   },
   {
     "id": "05-perdomo",
     "name": "Martha Cristina Perdomo Salas",
-    "cupos": 2
+    "display": "Martha Perdomo y Silvia Salas"
   },
   {
     "id": "06-perdomo",
     "name": "Gemma Otilia Perdomo Salas",
-    "cupos": 3
+    "display": "Gema Perdomo, esposo e hijo"
   },
   {
     "id": "07-perdomo",
     "name": "Oscar Eduardo Chavarro Perdomo",
-    "cupos": 3
+    "display": "Oscar Chavarro, esposa e hija"
   },
   {
     "id": "08-dussan",
     "name": "Omar Dussan Coronado",
-    "cupos": 2
+    "display": "Omar Dussan y Lucelida Ipuz"
   },
   {
     "id": "09-ipuz",
     "name": "Andrea Katherine Ipuz García",
-    "cupos": 3
+    "display": "Andrea Ipuz, novio e hijo"
   },
   {
     "id": "10-dussan",
-    "name": "Milena Dussan",
-    "cupos": 2
+    "name": "Milena Dussan Coronado",
+    "display": "Milena Dussan e hijo"
   },
   {
     "id": "11-ipuz",
-    "name": "Olvein Ipuz",
-    "cupos": 3
+    "name": "Olvein Ipuz García",
+    "display": "Olvein Ipuz, esposa e hija"
   },
   {
     "id": "12-velasquez",
-    "name": "Nelson Javier Velasquez",
-    "cupos": 1
+    "name": "Nelson Velasquez",
+    "display": "Nelson Velasquez"
   },
   {
     "id": "13-canacue",
-    "name": "Jeisson Leonardo Canacue",
-    "cupos": 1
+    "name": "Jeisson Canacue",
+    "display": "Jeisson Canacue"
   },
   {
     "id": "14-soza",
-    "name": "Jorge Augusto Soza",
-    "cupos": 2
+    "name": "Jorge Augusto Sosa Echeverry",
+    "display": "Jorge Sosa y novia"
   },
   {
     "id": "15-dussan",
-    "name": "Silvia Dussan",
-    "cupos": 2
+    "name": "Silvia Dussan Coronado",
+    "display": "Silvia Dussan y esposo"
   },
   {
     "id": "16-ipuz",
-    "name": "Lucila Ipuz",
-    "cupos": 1
+    "name": "Lucila Ipuz García",
+    "display": "Lucila Ipuz"
   },
   {
     "id": "17-guzman",
-    "name": "Alejandro Guzmán",
-    "cupos": 2
+    "name": "Jose Alejandro Ramirez",
+    "display": "Alejandro Ramirez y esposa"
   }
 ]
