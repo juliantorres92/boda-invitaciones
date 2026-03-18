@@ -117,6 +117,7 @@ section {
     font-size: var(--text-size);
     color: var(--text-color);
     line-height: 1.6;
+    margin-top: 0.5rem;
 }
 
 .family {
@@ -222,6 +223,7 @@ section {
     font-size: var(--text-size);
     color: var(--text-color);
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .event-address {
