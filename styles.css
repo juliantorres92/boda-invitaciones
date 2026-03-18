@@ -275,16 +275,6 @@ section > .section-title {
     background: var(--white) !important;
 }
 
-.countdown h2 {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-}
-
 .countdown-timer {
     display: flex;
     gap: clamp(0.3rem, 2vw, 0.5rem);
