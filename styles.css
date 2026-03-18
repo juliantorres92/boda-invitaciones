@@ -53,11 +53,16 @@ section {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     scroll-snap-align: start;
     background: var(--white);
+    padding-top: 6rem;
+}
+
+section > *:not(.section-divider) {
+    margin-bottom: 0.5rem;
 }
 
 .section-divider {
@@ -109,7 +114,7 @@ section {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-color);
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .section-text {
@@ -117,7 +122,7 @@ section {
     font-size: var(--text-size);
     color: var(--text-color);
     line-height: 1.6;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
 }
 
 .family {
@@ -222,14 +227,15 @@ section {
     font-family: var(--font-text);
     font-size: var(--text-size);
     color: var(--text-color);
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .event-address {
     font-family: var(--font-text);
     font-size: var(--text-size);
     color: var(--text-color);
+    margin-top: 1rem;
 }
 
 .map-link {
