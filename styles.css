@@ -307,20 +307,11 @@ section > .section-title {
 .countdown h2 {
     font-family: var(--font-title);
     font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.countdown-subtitle {
-    font-family: var(--font-text);
-    font-size: var(--text-size);
-    color: var(--accent-color);
     margin-bottom: 2rem;
-    letter-spacing: 1px;
 }
 
 .countdown-timer {
@@ -362,14 +353,6 @@ section > .section-title {
     color: var(--accent-color);
     opacity: 0.4;
     margin-top: -1rem;
-}
-
-.countdown-footer {
-    font-family: var(--font-title);
-    font-size: var(--text-size);
-    font-style: italic;
-    color: var(--accent-color);
-    margin-top: 1.5rem;
 }
 
 .confirmacion .section-intro {
