@@ -100,7 +100,7 @@ section > .section-title {
 .section-title {
     font-family: var(--font-title);
     font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--primary-color);
@@ -264,14 +264,6 @@ section > .section-title {
 .map-link:hover {
     background: var(--accent-color);
     color: var(--white);
-}
-
-.after-text {
-    font-family: var(--font-subtitle);
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    font-weight: 600;
-    color: var(--accent-color);
-    margin-top: 1rem;
 }
 
 .after-ceremony .section-title {
