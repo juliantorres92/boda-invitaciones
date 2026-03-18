@@ -6,7 +6,7 @@
     --primary-color: #3f4f22;
     --accent-color: #556b2f;
     --text-color: #5A5A5A;
-    --light-bg: var(--avena);
+    --light-bg: var(--white);
     --white: #FDFBF7;
     --font-title: 'Playfair Display', Georgia, serif;
     --font-subtitle: 'Cinzel', serif;
@@ -56,7 +56,7 @@ section {
     align-items: center;
     position: relative;
     scroll-snap-align: start;
-    background: var(--avena);
+    background: var(--white);
 }
 
 .section-divider {
