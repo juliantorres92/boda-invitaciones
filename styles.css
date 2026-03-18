@@ -267,11 +267,16 @@ section > .section-title {
 }
 
 .after-text {
-    font-family: var(--font-title);
-    font-size: var(--text-size);
-    font-style: italic;
-    color: var(--primary-color);
-    opacity: 0.85;
+    font-family: var(--font-subtitle);
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-top: 1rem;
+}
+
+.after-ceremony .section-title {
+    margin-bottom: 0.5rem;
+}
 }
 
 .dress-code {
