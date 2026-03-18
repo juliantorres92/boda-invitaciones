@@ -114,7 +114,7 @@ section {
 .section-text {
     font-family: var(--font-text);
     font-size: clamp(0.75rem, 2.5vw, 1rem);
-    color: var(--primary-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
