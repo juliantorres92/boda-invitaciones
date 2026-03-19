@@ -1,0 +1,21 @@
+{
+  "name": "Boda Julian & Yessica",
+  "short_name": "J&Y Boda",
+  "description": "Invitación de boda - Julian & Yessica - 02 de Mayo 2026",
+  "icons": [
+    {
+      "src": "/assets/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#6B7B59",
+  "background_color": "#FDFBF7",
+  "display": "standalone",
+  "start_url": "/"
+}
