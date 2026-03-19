@@ -12,15 +12,15 @@
 | Estado | Cantidad | Descripción |
 |:-------|:---------|:------------|
 | 🔄 En Progreso | 0 | HUs actualmente en desarrollo |
-| ⬜ TODO | 23 | HUs pendientes |
-| ✅ Completadas | 0 | HUs finalizadas |
+| ⬜ TODO | 20 | HUs pendientes |
+| ✅ Completadas | 3 | HUs finalizadas |
 | **TOTAL** | **23** | Issues identificados |
 
 ### Progreso por Prioridad
 
 | Prioridad | Cantidad | Completadas | Pendientes |
 |:----------|:---------|:------------|:-----------|
-| 🔴 Crítica | 4 | 0 | 4 |
+| 🔴 Crítica | 4 | 3 | 1 |
 | 🟡 Alta | 5 | 0 | 5 |
 | 🟠 Media | 8 | 0 | 8 |
 | 🟢 Baja | 6 | 0 | 6 |
@@ -32,9 +32,10 @@
 > **Rama**: `sprint/1-foundation`  
 > **Objetivo**: Establecer base sólida - Corregir errores críticos y seguridad  
 > **Fecha inicio**: 19 de Marzo de 2026  
-> **Fecha fin estimada**: 19 de Marzo de 2026  
-> **Estado**: 🔄 EN PROGRESO  
-> **HUs**: 3 historias de usuario (4 issues agrupados)
+> **Fecha finalizado**: 19 de Marzo de 2026  
+> **Estado**: ✅ COMPLETADO - Pendiente revisión y merge a main  
+> **HUs**: 3/3 completadas (100%)  
+> **Issues resueltos**: #1, #2, #3, #4
 
 ### Convenciones de Commits
 ```
@@ -47,10 +48,13 @@ Tipos: fix, feat, security, style, refactor, docs, chore
 > **Rama**: `hu/1-fix-css-errors`  
 > **Issues**: #1 + #2  
 > **Prioridad**: 🔴 CRÍTICA  
-> **Estado**: ⬜ TODO  
+> **Estado**: ✅ DONE  
 > **Archivos**: `styles.css`  
 > **Estimación**: 7 min  
-> **Asignado a**: Claude (Agent)
+> **Tiempo real**: 5 min  
+> **Asignado a**: Claude (Agent)  
+> **Fecha completado**: 19 de Marzo de 2026  
+> **Commit**: `748782a`
 
 ---
 
@@ -114,10 +118,13 @@ Ambos issues son errores de sintaxis CSS que rompen el archivo de estilos.
 > **Rama**: `hu/2-secure-external-links`  
 > **Issue**: #3  
 > **Prioridad**: 🔴 CRÍTICA  
-> **Estado**: ⬜ TODO  
+> **Estado**: ✅ DONE  
 > **Archivos**: `index.html`  
 > **Estimación**: 10 min  
-> **Asignado a**: Claude (Agent)
+> **Tiempo real**: 8 min  
+> **Asignado a**: Claude (Agent)  
+> **Fecha completado**: 19 de Marzo de 2026  
+> **Commit**: `841ed61`
 
 ---
 
@@ -165,10 +172,13 @@ Enlaces con `target="_blank"` sin `rel="noopener noreferrer"` son vulnerables a 
 > **Rama**: `hu/3-add-favicon`  
 > **Issue**: #4  
 > **Prioridad**: 🔴 CRÍTICA  
-> **Estado**: ⬜ TODO  
-> **Archivos**: `index.html`, crear directorio `assets/` con imágenes  
+> **Estado**: ✅ DONE  
+> **Archivos**: `index.html`, `assets/` (9 archivos)  
 > **Estimación**: 45 min  
-> **Asignado a**: Claude (Agent)
+> **Tiempo real**: 25 min  
+> **Asignado a**: Claude (Agent)  
+> **Fecha completado**: 19 de Marzo de 2026  
+> **Commit**: `11bd8af`
 
 ---
 
@@ -1121,7 +1131,7 @@ Considerar impacto en rendimiento (lazy loading de iframe).
 
 | Sprint | Rama | HUs Totales | Completadas | En Progreso | Pendientes | % Completado |
 |:-------|:-----|:------------|:------------|:------------|:-----------|:-------------|
-| Sprint 1 (Foundation) | `sprint/1-foundation` | 3 | 0 | 0 | 3 | 0% |
+| Sprint 1 (Foundation) | `sprint/1-foundation` | 3 | 3 | 0 | 0 | ✅ 100% |
 | Sprint 2 | TBD | 5 | 0 | 0 | 5 | 0% |
 | Sprint 3 | TBD | 8 | 0 | 0 | 8 | 0% |
 | Backlog | - | 7 | 0 | 0 | 7 | 0% |
