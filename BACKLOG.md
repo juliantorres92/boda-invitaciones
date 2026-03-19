@@ -171,10 +171,13 @@ Enlaces con `target="_blank"` sin `rel="noopener noreferrer"` son vulnerables a 
 > **Rama**: `hu/3-add-favicon`  
 > **Issue**: #4  
 > **Prioridad**: 🔴 CRÍTICA  
-> **Estado**: ⬜ TODO  
-> **Archivos**: `index.html`, crear directorio `assets/` con imágenes  
+> **Estado**: ✅ DONE  
+> **Archivos**: `index.html`, `assets/` (9 archivos)  
 > **Estimación**: 45 min  
-> **Asignado a**: Claude (Agent)
+> **Tiempo real**: 25 min  
+> **Asignado a**: Claude (Agent)  
+> **Fecha completado**: 19 de Marzo de 2026  
+> **Commit**: `11bd8af`
 
 ---
 
