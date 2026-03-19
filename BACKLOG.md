@@ -117,10 +117,13 @@ Ambos issues son errores de sintaxis CSS que rompen el archivo de estilos.
 > **Rama**: `hu/2-secure-external-links`  
 > **Issue**: #3  
 > **Prioridad**: 🔴 CRÍTICA  
-> **Estado**: ⬜ TODO  
+> **Estado**: ✅ DONE  
 > **Archivos**: `index.html`  
 > **Estimación**: 10 min  
-> **Asignado a**: Claude (Agent)
+> **Tiempo real**: 8 min  
+> **Asignado a**: Claude (Agent)  
+> **Fecha completado**: 19 de Marzo de 2026  
+> **Commit**: `841ed61`
 
 ---
 
