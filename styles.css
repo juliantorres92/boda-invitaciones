@@ -191,6 +191,45 @@ section > .section-title {
     opacity: 0.7;
 }
 
+/* --- Cover: overrides de tipografía y jerarquía visual --- */
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.cover .section-title {
+    font-family: var(--font-subtitle);
+    font-size: clamp(2.2rem, 9vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: 3px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.cover .section-subtitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 4.5vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: none;
+    opacity: 0.9;
+    margin-bottom: 1.2rem;
+}
+
+.cover .date {
+    font-family: var(--font-text);
+    font-size: clamp(0.75rem, 2.8vw, 1rem);
+    color: var(--white);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
 .save-the-date {
     font-family: var(--font-subtitle);
     font-size: clamp(0.8rem, 3vw, 1rem);
