@@ -600,6 +600,7 @@ section > .section-title {
     opacity: 1;
 }
 .deco-corner.top-right   { top: -4%; right: -4%; }
+.deco-corner.top-left    { top: -4%; left: -4%; }
 .deco-corner.bottom-right { bottom: -4%; right: -4%; }
 .deco-corner.bottom-left  { bottom: -4%; left: -4%; }
 
@@ -697,3 +698,33 @@ section > .section-title {
         opacity: 0.65;
     }
 }
+
+/* === Marco floral interior — cover === */
+.cover::after {
+    content: '';
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(253, 251, 247, 0.35);
+    pointer-events: none;
+    z-index: 1;
+}
+@media (max-width: 600px) {
+    .cover::after { inset: 16px; }
+}
+
+/* Esquinas: tamaño reducido vs global para que el marco sea visible */
+.cover .cover-corner img {
+    width: clamp(200px, 48vw, 320px);
+    opacity: 0.90;
+}
+
+/* Transforms: asset tiene bouquet en esquina inferior-derecha */
+.cover .cover-corner.top-right img   { transform: scaleY(-1); }
+.cover .cover-corner.top-left img    { transform: scale(-1, -1); }
+.cover .cover-corner.bottom-left img { transform: scaleX(-1); }
+/* bottom-right: sin transform — orientación natural del asset */
+
+/* Z-index */
+.cover .deco-corner      { z-index: 3; }
+.cover .cover-content    { z-index: 4; }
+.cover .section-divider  { z-index: 4; }
