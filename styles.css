@@ -202,8 +202,13 @@ section > .section-title {
     min-height: 100vh;
     min-height: 100svh;
     min-height: 100dvh;
-    background-color: var(--verde-oliva);
-    color: var(--white);
+    background-color: var(--white);
+    background-image: url('assets/images/textures/paper-vintage-opt.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,7 +226,7 @@ section > .section-title {
 }
 
 .cover .section-divider span {
-    background: var(--white);
+    background: var(--accent-color);
     opacity: 0.7;
 }
 
@@ -237,10 +242,10 @@ section > .section-title {
 .cover .section-title {
     font-family: var(--font-subtitle);
     font-size: clamp(2.2rem, 9vw, 4.5rem);
-    color: var(--white);
+    color: inherit;
     letter-spacing: 3px;
     line-height: 1.3;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    text-shadow: none;
     margin-bottom: 1rem;
 }
 
@@ -249,7 +254,7 @@ section > .section-title {
     font-size: clamp(1.1rem, 4.5vw, 2rem);
     font-style: italic;
     font-weight: 400;
-    color: var(--white);
+    color: var(--accent-color);
     letter-spacing: 2px;
     text-transform: none;
     opacity: 0.9;
@@ -259,7 +264,7 @@ section > .section-title {
 .cover .date {
     font-family: var(--font-text);
     font-size: clamp(0.75rem, 2.8vw, 1rem);
-    color: var(--white);
+    color: var(--text-color);
     letter-spacing: 5px;
     text-transform: uppercase;
     opacity: 0.85;
@@ -586,6 +591,8 @@ section > .section-title {
    DECORACIONES VISUALES — SPRINT 2
    ====================================== */
 
+/* === Marco floral full-cover === */
+
 /* === Decoraciones de esquina === */
 .deco-corner {
     position: absolute;
@@ -712,17 +719,19 @@ section > .section-title {
     .cover::after { inset: 16px; }
 }
 
-/* Esquinas: tamaño reducido vs global para que el marco sea visible */
+/* Esquinas diagonales: top-left y bottom-right */
 .cover .cover-corner img {
-    width: clamp(200px, 48vw, 320px);
-    opacity: 0.90;
+    width: clamp(390px, 95vw, 630px);
+    opacity: 0.92;
 }
 
-/* Transforms: asset tiene bouquet en esquina inferior-derecha */
-.cover .cover-corner.top-right img   { transform: scaleY(-1); }
+/* top-left: espejo horizontal y vertical del asset (bouquet gira a esquina superior-izquierda) */
 .cover .cover-corner.top-left img    { transform: scale(-1, -1); }
-.cover .cover-corner.bottom-left img { transform: scaleX(-1); }
-/* bottom-right: sin transform — orientación natural del asset */
+/* bottom-right: orientación natural del asset */
+
+/* Posición: pegadas a las esquinas */
+.cover .cover-corner.top-left    { top: -12%; left: -12%; }
+.cover .cover-corner.bottom-right { bottom: -12%; right: -12%; }
 
 /* Z-index */
 .cover .deco-corner      { z-index: 3; }
