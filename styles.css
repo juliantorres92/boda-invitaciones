@@ -640,15 +640,37 @@ section > .section-title {
     .deco-inline.deco-lg { max-width: 200px; }
 }
 
-/* === Textura de papel — ceremony y recepcion === */
-.ceremony,
-.recepcion {
+/* === Fondo alternado por sección (blanco crema / blanco puro) === */
+/* Blanco crema: cover(1), families(3), after-ceremony(5), countdown(7), closing(9) */
+.families,
+.after-ceremony,
+.countdown,
+.closing {
     background-color: var(--white);
     background-image: url('assets/images/textures/paper-vintage-opt.webp');
-    background-size: 400px 400px;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-blend-mode: multiply;
 }
+/* Blanco puro: welcome(2), ceremony(4), recepcion(6), confirmacion(8) */
+.welcome,
+.ceremony,
+.recepcion,
+.confirmacion {
+    background-color: #ffffff;
+}
+
+/* === Esquinas diagonales — recepcion === */
+.recepcion .recepcion-corner img {
+    width: clamp(338px, 91vw, 494px);
+    opacity: 0.90;
+}
+.recepcion .recepcion-corner.top-left     { top: 0; left: 0; }
+.recepcion .recepcion-corner.bottom-right { bottom: 0; right: 0; }
+.recepcion .recepcion-corner.top-left img    { transform: scale(-1, -1) translateY(9%); }
+.recepcion .recepcion-corner.bottom-right img { transform: translateY(9%); }
+.recepcion .deco-corner { z-index: 3; }
 
 /* === Divisor floral SVG === */
 .floral-divider {
@@ -706,17 +728,33 @@ section > .section-title {
     }
 }
 
-/* === Marco floral interior — cover === */
-.cover::after {
+/* === Marco interior — todas las secciones === */
+.cover::after,
+.welcome::after,
+.families::after,
+.ceremony::after,
+.after-ceremony::after,
+.recepcion::after,
+.countdown::after,
+.confirmacion::after,
+.closing::after {
     content: '';
     position: absolute;
     inset: 24px;
-    border: 1px solid rgba(253, 251, 247, 0.35);
+    border: 1px solid rgba(63, 79, 34, 0.25);
     pointer-events: none;
     z-index: 1;
 }
 @media (max-width: 600px) {
-    .cover::after { inset: 16px; }
+    .cover::after,
+    .welcome::after,
+    .families::after,
+    .ceremony::after,
+    .after-ceremony::after,
+    .recepcion::after,
+    .countdown::after,
+    .confirmacion::after,
+    .closing::after { inset: 16px; }
 }
 
 /* Esquinas diagonales: top-left y bottom-right */
