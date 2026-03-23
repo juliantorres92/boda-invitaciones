@@ -606,10 +606,10 @@ section > .section-title {
     height: auto;
     opacity: 1;
 }
-.deco-corner.top-right   { top: -4%; right: -4%; }
-.deco-corner.top-left    { top: -4%; left: -4%; }
-.deco-corner.bottom-right { bottom: -4%; right: -4%; }
-.deco-corner.bottom-left  { bottom: -4%; left: -4%; }
+.deco-corner.top-right   { top: 0; right: 0; }
+.deco-corner.top-left    { top: 0; left: 0; }
+.deco-corner.bottom-right { bottom: 0; right: 0; }
+.deco-corner.bottom-left  { bottom: 0; left: 0; }
 
 @media (max-width: 600px) {
     .deco-corner img { width: clamp(240px, 64vw, 400px); opacity: 1; }
@@ -660,6 +660,18 @@ section > .section-title {
 .confirmacion {
     background-color: #ffffff;
 }
+
+/* === Esquinas diagonales — ceremony === */
+.ceremony .ceremony-corner img {
+    width: clamp(338px, 91vw, 494px);
+    opacity: 0.90;
+}
+.ceremony .ceremony-corner.top-left     { top: -4%; left: -4%; }
+.ceremony .ceremony-corner.bottom-right { bottom: -4%; right: -4%; }
+.ceremony { overflow: clip; overflow-clip-margin: 60px; }
+.ceremony .ceremony-corner.top-left img    { transform: scale(-1, -1); }
+.ceremony .ceremony-corner.bottom-right img { transform: none; }
+.ceremony .deco-corner { z-index: 3; }
 
 /* === Esquinas diagonales — recepcion === */
 .recepcion .recepcion-corner img {
@@ -729,10 +741,16 @@ section > .section-title {
 }
 
 /* === Marco interior — todas las secciones === */
-.cover::after,
+.cover::after {
+    content: '';
+    position: absolute;
+    inset: 2%;
+    border: 1px solid rgba(63, 79, 34, 0.25);
+    pointer-events: none;
+    z-index: 1;
+}
 .welcome::after,
 .families::after,
-.ceremony::after,
 .after-ceremony::after,
 .recepcion::after,
 .countdown::after,
@@ -745,16 +763,15 @@ section > .section-title {
     pointer-events: none;
     z-index: 1;
 }
+.ceremony::after {
+    content: '';
+    position: absolute;
+    inset: 2%;
+    border: 1px solid rgba(63, 79, 34, 0.25);
+    pointer-events: none;
+    z-index: 1;
+}
 @media (max-width: 600px) {
-    .cover::after,
-    .welcome::after,
-    .families::after,
-    .ceremony::after,
-    .after-ceremony::after,
-    .recepcion::after,
-    .countdown::after,
-    .confirmacion::after,
-    .closing::after { inset: 16px; }
 }
 
 /* Esquinas diagonales: top-left y bottom-right */
@@ -768,8 +785,8 @@ section > .section-title {
 /* bottom-right: orientación natural del asset */
 
 /* Posición: pegadas a las esquinas */
-.cover .cover-corner.top-left    { top: -12%; left: -12%; }
-.cover .cover-corner.bottom-right { bottom: -12%; right: -12%; }
+.cover .cover-corner.top-left    { top: -2%; left: -4%; }
+.cover .cover-corner.bottom-right { bottom: -2%; right: -4%; }
 
 /* Z-index */
 .cover .deco-corner      { z-index: 3; }
