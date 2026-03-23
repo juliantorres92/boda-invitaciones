@@ -609,16 +609,16 @@ section > .section-title {
 }
 .deco-corner img {
     display: block;
-    width: clamp(80px, 18vw, 140px);
+    width: clamp(110px, 24vw, 160px);
     height: auto;
-    opacity: 0.28;
+    opacity: 0.38;
 }
 .deco-corner.top-right  { top: var(--section-pt-desktop); right: 0; }
 .deco-corner.bottom-right { bottom: var(--section-pb-desktop); right: 0; }
 .deco-corner.bottom-left  { bottom: var(--section-pb-desktop); left: 0; }
 
 @media (max-width: 600px) {
-    .deco-corner img { width: clamp(60px, 14vw, 100px); opacity: 0.22; }
+    .deco-corner img { width: clamp(90px, 22vw, 130px); opacity: 0.32; }
     .deco-corner.top-right   { top: var(--section-pt-mobile); }
     .deco-corner.bottom-right,
     .deco-corner.bottom-left { bottom: var(--section-pb-mobile); }
@@ -634,25 +634,25 @@ section > .section-title {
     pointer-events: none;
 }
 .deco-inline.deco-sm {
-    max-width: 70px;
-    opacity: 0.42;
+    max-width: 90px;
+    opacity: 0.52;
     margin: 0.75rem auto 1.5rem;
 }
 .deco-inline.deco-lg {
-    max-width: 220px;
-    opacity: 0.35;
+    max-width: 240px;
+    opacity: 0.60;
     margin: 2rem auto;
 }
 
 @media (max-width: 600px) {
     .deco-inline    { max-width: 160px; opacity: 0.32; }
-    .deco-inline.deco-lg { max-width: 180px; }
+    .deco-inline.deco-lg { max-width: 200px; }
 }
 
 /* === Textura de papel — ceremony y recepcion === */
 .ceremony,
 .recepcion {
-    background-image: url('assets/images/textures/paper-vintage.webp');
+    background-image: url('assets/images/textures/paper-vintage-opt.webp');
     background-size: 400px 400px;
     background-repeat: repeat;
     background-blend-mode: multiply;
@@ -675,8 +675,8 @@ section > .section-title {
 .ceremony-rings {
     display: block;
     margin: 0 auto 1.5rem;
-    width: clamp(60px, 14vw, 90px);
+    width: clamp(90px, 22vw, 130px);
     height: auto;
-    opacity: 0.45;
+    opacity: 0.60;
     pointer-events: none;
 }
