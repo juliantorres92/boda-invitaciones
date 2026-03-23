@@ -82,7 +82,6 @@ section {
     align-items: center;
     position: relative;
     scroll-snap-align: start;
-    background: var(--white);
 }
 
 section > .section-title {
@@ -609,16 +608,16 @@ section > .section-title {
 }
 .deco-corner img {
     display: block;
-    width: clamp(110px, 24vw, 160px);
+    width: clamp(160px, 35vw, 240px);
     height: auto;
-    opacity: 0.38;
+    opacity: 0.62;
 }
 .deco-corner.top-right  { top: var(--section-pt-desktop); right: 0; }
 .deco-corner.bottom-right { bottom: var(--section-pb-desktop); right: 0; }
 .deco-corner.bottom-left  { bottom: var(--section-pb-desktop); left: 0; }
 
 @media (max-width: 600px) {
-    .deco-corner img { width: clamp(90px, 22vw, 130px); opacity: 0.32; }
+    .deco-corner img { width: clamp(130px, 32vw, 200px); opacity: 0.55; }
     .deco-corner.top-right   { top: var(--section-pt-mobile); }
     .deco-corner.bottom-right,
     .deco-corner.bottom-left { bottom: var(--section-pb-mobile); }
@@ -675,8 +674,41 @@ section > .section-title {
 .ceremony-rings {
     display: block;
     margin: 0 auto 1.5rem;
-    width: clamp(90px, 22vw, 130px);
+    width: clamp(140px, 34vw, 200px);
     height: auto;
-    opacity: 0.60;
+    opacity: 0.85;
     pointer-events: none;
+}
+
+/* === Arco floral inferior — cover === */
+.cover-watercolor-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    display: block;
+}
+
+/* === Decoración esquina — closing === */
+.closing-deco-corner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: clamp(160px, 38vw, 260px);
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.72;
+    z-index: 1;
+}
+
+@media (max-width: 600px) {
+    .closing-deco-corner {
+        width: clamp(120px, 42vw, 200px);
+        opacity: 0.65;
+    }
 }
