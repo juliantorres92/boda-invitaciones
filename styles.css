@@ -81,6 +81,7 @@ section {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
     scroll-snap-align: start;
 }
 
@@ -253,6 +254,7 @@ section > .section-title {
     font-size: clamp(2.2rem, 9vw, 4.5rem);
     color: var(--white);
     letter-spacing: 3px;
+    line-height: 1.3;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     margin-bottom: 1rem;
 }
@@ -608,19 +610,16 @@ section > .section-title {
 }
 .deco-corner img {
     display: block;
-    width: clamp(160px, 35vw, 240px);
+    width: clamp(280px, 68vw, 440px);
     height: auto;
-    opacity: 0.62;
+    opacity: 1;
 }
-.deco-corner.top-right  { top: var(--section-pt-desktop); right: 0; }
-.deco-corner.bottom-right { bottom: var(--section-pb-desktop); right: 0; }
-.deco-corner.bottom-left  { bottom: var(--section-pb-desktop); left: 0; }
+.deco-corner.top-right   { top: -4%; right: -4%; }
+.deco-corner.bottom-right { bottom: -4%; right: -4%; }
+.deco-corner.bottom-left  { bottom: -4%; left: -4%; }
 
 @media (max-width: 600px) {
-    .deco-corner img { width: clamp(130px, 32vw, 200px); opacity: 0.55; }
-    .deco-corner.top-right   { top: var(--section-pt-mobile); }
-    .deco-corner.bottom-right,
-    .deco-corner.bottom-left { bottom: var(--section-pb-mobile); }
+    .deco-corner img { width: clamp(240px, 64vw, 400px); opacity: 1; }
 }
 
 /* === Elementos inline en flujo === */
@@ -651,6 +650,7 @@ section > .section-title {
 /* === Textura de papel — ceremony y recepcion === */
 .ceremony,
 .recepcion {
+    background-color: var(--white);
     background-image: url('assets/images/textures/paper-vintage-opt.webp');
     background-size: 400px 400px;
     background-repeat: repeat;
