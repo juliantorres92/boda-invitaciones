@@ -2,6 +2,7 @@
     --beige: #F5F0E6;
     --avena: #E8DFD0;
     --verde-oliva: #6B7B59;
+    --verde-sage: #9CAF88;
     --blanco-crema: #FDFBF7;
     --primary-color: #3f4f22;
     --accent-color: #556b2f;
@@ -593,4 +594,89 @@ section > .section-title {
 
 .cover .section-divider {
     animation: fadeIn 1s ease 1.6s forwards;
+}
+
+/* ======================================
+   DECORACIONES VISUALES — SPRINT 2
+   ====================================== */
+
+/* === Decoraciones de esquina === */
+.deco-corner {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+}
+.deco-corner img {
+    display: block;
+    width: clamp(80px, 18vw, 140px);
+    height: auto;
+    opacity: 0.28;
+}
+.deco-corner.top-right  { top: var(--section-pt-desktop); right: 0; }
+.deco-corner.bottom-right { bottom: var(--section-pb-desktop); right: 0; }
+.deco-corner.bottom-left  { bottom: var(--section-pb-desktop); left: 0; }
+
+@media (max-width: 600px) {
+    .deco-corner img { width: clamp(60px, 14vw, 100px); opacity: 0.22; }
+    .deco-corner.top-right   { top: var(--section-pt-mobile); }
+    .deco-corner.bottom-right,
+    .deco-corner.bottom-left { bottom: var(--section-pb-mobile); }
+}
+
+/* === Elementos inline en flujo === */
+.deco-inline {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 200px;
+    height: auto;
+    opacity: 0.38;
+    pointer-events: none;
+}
+.deco-inline.deco-sm {
+    max-width: 70px;
+    opacity: 0.42;
+    margin: 0.75rem auto 1.5rem;
+}
+.deco-inline.deco-lg {
+    max-width: 220px;
+    opacity: 0.35;
+    margin: 2rem auto;
+}
+
+@media (max-width: 600px) {
+    .deco-inline    { max-width: 160px; opacity: 0.32; }
+    .deco-inline.deco-lg { max-width: 180px; }
+}
+
+/* === Textura de papel — ceremony y recepcion === */
+.ceremony,
+.recepcion {
+    background-image: url('assets/images/textures/paper-vintage.webp');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+}
+
+/* === Divisor floral SVG === */
+.floral-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    color: var(--verde-sage);
+    opacity: 0.55;
+    width: 100%;
+    max-width: 200px;
+}
+.closing .floral-divider { color: var(--beige); opacity: 0.70; }
+
+/* === Anillos en ceremony === */
+.ceremony-rings {
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: clamp(60px, 14vw, 90px);
+    height: auto;
+    opacity: 0.45;
+    pointer-events: none;
 }
