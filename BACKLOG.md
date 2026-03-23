@@ -2,7 +2,7 @@
 
 **Proyecto**: Invitación de Boda Julian & Yessica  
 **Fecha del Evento**: 02 de Mayo de 2026  
-**Última Actualización**: 19 de Marzo de 2026  
+**Última Actualización**: 20 de Marzo de 2026
 **Metodología**: Agile - Sprints con HUs (Historias de Usuario)
 
 ---
@@ -12,8 +12,8 @@
 | Estado | Cantidad | Descripción |
 |:-------|:---------|:------------|
 | 🔄 En Progreso | 0 | HUs actualmente en desarrollo |
-| ⬜ TODO | 20 | HUs pendientes |
-| ✅ Completadas | 3 | HUs finalizadas |
+| ⬜ TODO | 16 | HUs pendientes |
+| ✅ Completadas | 7 | HUs finalizadas |
 | **TOTAL** | **23** | Issues identificados |
 
 ### Progreso por Prioridad
@@ -611,11 +611,69 @@ async function loadGuestData() {
 
 ---
 
-## 🎨 SPRINT 2: MEJORAS DE UX Y ANIMACIONES
+## 🎨 SPRINT 2: DESIGN HERO
 
-> **Objetivo**: Mejorar experiencia de usuario e interactividad  
-> **Fecha inicio**: 28 de Marzo de 2026  
-> **Fecha fin**: 10 de Abril de 2026  
+> **Rama**: `sprint/2-design-hero`
+> **Objetivo**: Mejorar experiencia visual de la sección cover y welcome
+> **Fecha inicio**: 20 de Marzo de 2026
+> **Fecha fin**: TBD
+> **Estado**: 🔄 EN PROGRESO (pendiente merge a main)
+> **HUs**: 4/4 completadas (100% implementadas, pendiente revisión y merge a main)
+> **HUs completadas**: HU-4, HU-5, HU-6, HU-7
+
+### HU-4: Background visual Cover
+
+> **Rama**: `hu/4-cover-background`
+> **Estado**: ✅ DONE
+> **Archivos**: `styles.css`
+> **Fecha completado**: 20 de Marzo de 2026
+> **Commit**: `4222015`
+
+Imagen floral `cover-bg.webp` como fondo full-screen con overlay radial de gradiente verde oliva para legibilidad del texto blanco.
+
+---
+
+### HU-5: Tipografía y jerarquía visual Cover
+
+> **Rama**: `hu/5-cover-typography`
+> **Estado**: ✅ DONE
+> **Archivos**: `styles.css`
+> **Fecha completado**: 20 de Marzo de 2026
+> **Commit**: `7731dfd`
+
+Overrides tipográficos para `.cover`: título en Cinzel blanco con letter-spacing amplio, subtítulo en Cormorant Garamond italic, fecha en Montserrat uppercase con opacity 0.85.
+
+---
+
+### HU-6: Animaciones de entrada Cover
+
+> **Rama**: `hu/6-cover-animations`
+> **Estado**: ✅ DONE
+> **Archivos**: `styles.css`
+> **Fecha completado**: 20 de Marzo de 2026
+> **Commit**: `7c105f4`
+
+Keyframes `fadeInDown`, `fadeInUp`, `fadeIn`. Animaciones escalonadas: título (0.3s), subtítulo (0.8s), fecha (1.2s), separador (1.6s).
+
+---
+
+### HU-7: Rediseño visual sección Welcome
+
+> **Rama**: `hu/7-welcome-redesign`
+> **Estado**: ✅ DONE
+> **Archivos**: `index.html`, `styles.css`
+> **Fecha completado**: 20 de Marzo de 2026
+> **Commit**: `02d85c0`
+
+Ornamento SVG decorativo, overrides tipográficos: guest-name en Cinzel, section-intro en Cormorant Garamond italic, cupos-info como badge redondeado con fondo avena.
+
+---
+
+## 🎨 SPRINT 3: MEJORAS DE UX Y ANIMACIONES
+
+> **Objetivo**: Mejorar experiencia de usuario e interactividad
+> **Fecha inicio**: TBD
+> **Fecha fin**: TBD
 > **Estado**: ⬜ TODO
 
 ### Issue #10: Scroll Indicator en Primera Sección
@@ -1133,10 +1191,10 @@ Considerar impacto en rendimiento (lazy loading de iframe).
 | Sprint | Rama | HUs Totales | Completadas | En Progreso | Pendientes | % Completado |
 |:-------|:-----|:------------|:------------|:------------|:-----------|:-------------|
 | Sprint 1 (Foundation) | `sprint/1-foundation` | 3 | 3 | 0 | 0 | ✅ 100% |
-| Sprint 2 | TBD | 5 | 0 | 0 | 5 | 0% |
+| Sprint 2 (Design Hero) | `sprint/2-design-hero` | 4 | 4 | 0 | 0 | 🔄 100% (pendiente merge) |
 | Sprint 3 | TBD | 8 | 0 | 0 | 8 | 0% |
-| Backlog | - | 7 | 0 | 0 | 7 | 0% |
-| **TOTAL** | - | **23** | **0** | **0** | **23** | **0%** |
+| Backlog | - | 8 | 0 | 0 | 8 | 0% |
+| **TOTAL** | - | **23** | **7** | **0** | **16** | **30%** |
 
 ### Prioridades
 
@@ -1268,6 +1326,6 @@ security(html): agregar rel="noopener" a enlaces externos
 
 ---
 
-**Última actualización**: 19 de Marzo de 2026  
-**Próxima revisión**: 20 de Marzo de 2026  
+**Última actualización**: 20 de Marzo de 2026
+**Próxima revisión**: 27 de Marzo de 2026
 **Responsable**: Equipo de Desarrollo

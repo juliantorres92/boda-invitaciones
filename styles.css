@@ -12,6 +12,27 @@
     --font-subtitle: 'Cinzel', serif;
     --font-text: 'Montserrat', Arial, sans-serif;
     --text-size: clamp(0.85rem, 3vw, 1.25rem);
+
+    /* ===== Spacing System ===== */
+    --sp-xs:  0.25rem;
+    --sp-sm:  0.5rem;
+    --sp-md:  1rem;
+    --sp-lg:  1.5rem;
+    --sp-xl:  2rem;
+    --sp-2xl: 3rem;
+    --sp-3xl: 4rem;
+    --sp-4xl: 6rem;
+
+    /* Safe zone — padding asimétrico (top < bottom) */
+    --section-pt-desktop: 4rem;
+    --section-pb-desktop: 5rem;
+    --section-px-desktop: 1.5rem;
+    --section-pt-mobile:  3.5rem;
+    --section-pb-mobile:  4.5rem;
+    --section-px-mobile:  1rem;
+
+    --divider-bottom-desktop: 2rem;
+    --divider-bottom-mobile:  1.5rem;
 }
 
 * {
@@ -46,7 +67,10 @@ body {
 }
 
 section {
-    padding: 4rem 1.5rem;
+    padding-top:    var(--section-pt-desktop);
+    padding-bottom: var(--section-pb-desktop);
+    padding-left:   var(--section-px-desktop);
+    padding-right:  var(--section-px-desktop);
     text-align: center;
     min-height: 100vh;
     min-height: 100svh;
@@ -58,7 +82,6 @@ section {
     position: relative;
     scroll-snap-align: start;
     background: var(--white);
-    padding-top: 5rem;
 }
 
 section > .section-title {
@@ -66,10 +89,8 @@ section > .section-title {
 }
 
 .section-divider {
-    margin-top: auto;
-    padding-bottom: 0.5rem;
     position: absolute;
-    bottom: 3rem;
+    bottom: var(--divider-bottom-desktop);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -86,14 +107,15 @@ section > .section-title {
 
 @media (max-width: 600px) {
     section {
-        min-height: 100vh;
-        min-height: 100svh;
         min-height: 100dvh;
-        padding: 3rem 1rem;
+        padding-top:    var(--section-pt-mobile);
+        padding-bottom: var(--section-pb-mobile);
+        padding-left:   var(--section-px-mobile);
+        padding-right:  var(--section-px-mobile);
     }
-    
+
     .section-divider {
-        bottom: 2rem;
+        bottom: var(--divider-bottom-mobile);
     }
 }
 
@@ -140,29 +162,120 @@ section > .section-title {
 }
 
 .welcome .section-intro {
-    font-family: var(--font-subtitle);
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    font-weight: 600;
-    font-style: normal;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    font-weight: 400;
+    font-style: italic;
     color: var(--accent-color);
     margin-bottom: 1rem;
-    opacity: 0.85;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.welcome .guest-name {
+    font-family: var(--font-subtitle);
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.welcome .cupos-info:not(:empty) {
+    display: inline-block;
+    background: var(--avena);
+    color: var(--primary-color);
+    font-family: var(--font-text);
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-top: 0.75rem;
+}
+
+.welcome-ornament {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
 }
 
 .cover {
     min-height: 100vh;
     min-height: 100svh;
     min-height: 100dvh;
-    background: var(--white);
-    color: var(--primary-color);
+    background-image: url('assets/images/backgrounds/cover-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding: 0;
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(63, 79, 34, 0.20) 0%,
+        rgba(63, 79, 34, 0.55) 100%
+    );
+    z-index: 1;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cover .section-divider {
+    z-index: 2;
 }
 
 .cover .section-divider span {
-    background: var(--accent-color);
-    opacity: 0.5;
+    background: var(--white);
+    opacity: 0.7;
+}
+
+/* --- Cover: overrides de tipografía y jerarquía visual --- */
+
+.cover-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.cover .section-title {
+    font-family: var(--font-subtitle);
+    font-size: clamp(2.2rem, 9vw, 4.5rem);
+    color: var(--white);
+    letter-spacing: 3px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.cover .section-subtitle {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 4.5vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: none;
+    opacity: 0.9;
+    margin-bottom: 1.2rem;
+}
+
+.cover .date {
+    font-family: var(--font-text);
+    font-size: clamp(0.75rem, 2.8vw, 1rem);
+    color: var(--white);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.85;
 }
 
 .save-the-date {
@@ -354,6 +467,15 @@ section > .section-title {
 .closing {
     background: var(--verde-oliva) !important;
     color: var(--white);
+    min-height: auto;
+    padding: var(--sp-4xl) var(--sp-xl);
+    scroll-snap-align: none;
+}
+
+@media (max-width: 600px) {
+    .closing {
+        padding: var(--sp-3xl) var(--sp-lg);
+    }
 }
 
 .closing .section-divider span {
@@ -385,9 +507,16 @@ section > .section-title {
 .footer {
     background: var(--verde-oliva);
     color: var(--white);
-    padding: 3rem 1.5rem;
+    padding: var(--sp-2xl) var(--sp-lg);
     text-align: center;
     min-height: auto;
+    scroll-snap-align: none;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: var(--sp-xl) var(--sp-md);
+    }
 }
 
 .footer p {
@@ -423,4 +552,45 @@ section > .section-title {
     width: 0%;
     z-index: 1000;
     transition: width 0.1s ease-out;
+}
+
+/* --- Cover: animaciones de entrada escalonadas --- */
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.cover .section-title,
+.cover .section-subtitle,
+.cover .date,
+.cover .section-divider {
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.cover .section-title {
+    animation: fadeInDown 1s ease 0.3s forwards;
+}
+
+.cover .section-subtitle {
+    animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.cover .date {
+    animation: fadeInUp 1s ease 1.2s forwards;
+}
+
+.cover .section-divider {
+    animation: fadeIn 1s ease 1.6s forwards;
 }
