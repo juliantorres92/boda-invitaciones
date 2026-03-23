@@ -12,27 +12,6 @@
     --font-subtitle: 'Cinzel', serif;
     --font-text: 'Montserrat', Arial, sans-serif;
     --text-size: clamp(0.85rem, 3vw, 1.25rem);
-
-    /* ===== Spacing System ===== */
-    --sp-xs:  0.25rem;
-    --sp-sm:  0.5rem;
-    --sp-md:  1rem;
-    --sp-lg:  1.5rem;
-    --sp-xl:  2rem;
-    --sp-2xl: 3rem;
-    --sp-3xl: 4rem;
-    --sp-4xl: 6rem;
-
-    /* Safe zone — padding asimétrico (top < bottom) */
-    --section-pt-desktop: 4rem;
-    --section-pb-desktop: 5rem;
-    --section-px-desktop: 1.5rem;
-    --section-pt-mobile:  3.5rem;
-    --section-pb-mobile:  4.5rem;
-    --section-px-mobile:  1rem;
-
-    --divider-bottom-desktop: 2rem;
-    --divider-bottom-mobile:  1.5rem;
 }
 
 * {
@@ -67,10 +46,7 @@ body {
 }
 
 section {
-    padding-top:    var(--section-pt-desktop);
-    padding-bottom: var(--section-pb-desktop);
-    padding-left:   var(--section-px-desktop);
-    padding-right:  var(--section-px-desktop);
+    padding: 4rem 1.5rem;
     text-align: center;
     min-height: 100vh;
     min-height: 100svh;
@@ -82,6 +58,7 @@ section {
     position: relative;
     scroll-snap-align: start;
     background: var(--white);
+    padding-top: 5rem;
 }
 
 section > .section-title {
@@ -89,8 +66,10 @@ section > .section-title {
 }
 
 .section-divider {
+    margin-top: auto;
+    padding-bottom: 0.5rem;
     position: absolute;
-    bottom: var(--divider-bottom-desktop);
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -107,15 +86,14 @@ section > .section-title {
 
 @media (max-width: 600px) {
     section {
+        min-height: 100vh;
+        min-height: 100svh;
         min-height: 100dvh;
-        padding-top:    var(--section-pt-mobile);
-        padding-bottom: var(--section-pb-mobile);
-        padding-left:   var(--section-px-mobile);
-        padding-right:  var(--section-px-mobile);
+        padding: 3rem 1rem;
     }
-
+    
     .section-divider {
-        bottom: var(--divider-bottom-mobile);
+        bottom: 2rem;
     }
 }
 
@@ -210,7 +188,6 @@ section > .section-title {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0;
 }
 
 .cover::before {
@@ -231,6 +208,7 @@ section > .section-title {
 }
 
 .cover .section-divider {
+    position: relative;
     z-index: 2;
 }
 
@@ -467,15 +445,6 @@ section > .section-title {
 .closing {
     background: var(--verde-oliva) !important;
     color: var(--white);
-    min-height: auto;
-    padding: var(--sp-4xl) var(--sp-xl);
-    scroll-snap-align: none;
-}
-
-@media (max-width: 600px) {
-    .closing {
-        padding: var(--sp-3xl) var(--sp-lg);
-    }
 }
 
 .closing .section-divider span {
@@ -507,16 +476,9 @@ section > .section-title {
 .footer {
     background: var(--verde-oliva);
     color: var(--white);
-    padding: var(--sp-2xl) var(--sp-lg);
+    padding: 3rem 1.5rem;
     text-align: center;
     min-height: auto;
-    scroll-snap-align: none;
-}
-
-@media (max-width: 600px) {
-    .footer {
-        padding: var(--sp-xl) var(--sp-md);
-    }
 }
 
 .footer p {
@@ -576,82 +538,7 @@ section > .section-title {
 .cover .date,
 .cover .section-divider {
     opacity: 0;
-    animation: fadeIn 1s ease 1.6s forwards;
-}
-
-.floral-divider {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    color: var(--accent-color);
-}
-
-.corner-decoration {
-    position: absolute;
-    width: 80px;
-    height: auto;
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-.corner-top-right {
-    top: 1rem;
-    right: 1rem;
-    transform: rotate(90deg);
-}
-
-.corner-top-left {
-    top: 1rem;
-    left: 1rem;
-}
-
-.corner-bottom-left {
-    bottom: 1rem;
-    left: 1rem;
-    transform: rotate(-90deg);
-}
-
-.corner-bottom-right {
-    bottom: 1rem;
-    right: 1rem;
-    transform: rotate(180deg);
-}
-
-.section-illustration {
-    position: absolute;
-    max-width: 120px;
-    height: auto;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.families .section-illustration {
-    bottom: 2rem;
-    right: 2rem;
-}
-
-.ceremony .section-illustration {
-    bottom: 2rem;
-    left: 2rem;
-}
-
-@media (max-width: 600px) {
-    .corner-decoration {
-        width: 50px;
-    }
-    
-    .section-illustration {
-        max-width: 80px;
-    }
-}
-
-.closing .corner-decoration {
-    opacity: 0.3;
-    filter: brightness(1.5);
-}
-
-.closing .floral-divider {
-    color: var(--beige);
+    animation-fill-mode: forwards;
 }
 
 .cover .section-title {
