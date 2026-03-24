@@ -356,18 +356,23 @@ section > .section-title {
     display: inline-block;
     margin-top: 1rem;
     font-family: var(--font-text);
-    font-size: var(--text-size);
-    color: var(--text-color);
-    text-decoration: underline;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--text-color);
-    border-radius: 4px;
-    transition: background 0.3s, color 0.3s;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    text-decoration: none;
+    background: transparent;
+    padding: 0.7rem 2.25rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(63, 79, 34, 0.25);
+    transition: background 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
 .map-link:hover {
-    background: var(--accent-color);
-    color: var(--white);
+    background: rgba(63, 79, 34, 0.06);
+    opacity: 0.85;
 }
 
 .after-ceremony .section-title {
@@ -453,28 +458,25 @@ section > .section-title {
 }
 
 .whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--verde-oliva);
-    color: var(--white);
+    display: inline-block;
+    background: transparent;
+    color: var(--primary-color);
     text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
+    padding: 0.7rem 2.25rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0;
     font-family: var(--font-text);
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    font-weight: 500;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 15px rgba(107, 123, 89, 0.3);
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(63, 79, 34, 0.25);
+    transition: background 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
 .whatsapp-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 123, 89, 0.4);
-}
-
-.whatsapp-icon {
-    font-size: 1.3rem;
+    background: rgba(63, 79, 34, 0.06);
+    opacity: 0.85;
 }
 
 .closing {
