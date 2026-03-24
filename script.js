@@ -102,10 +102,55 @@ function initScrollProgress() {
     updateProgress();
 }
 
+function initAudio() {
+    const audio = document.getElementById('bgMusic');
+    const btn = document.getElementById('musicToggle');
+    let playing = false;
+
+    audio.volume = 0.1;
+
+    function play() {
+        audio.play().then(() => {
+            playing = true;
+            btn.classList.remove('paused');
+        }).catch(() => {});
+    }
+
+    function toggle() {
+        if (playing) {
+            audio.pause();
+            playing = false;
+            btn.classList.add('paused');
+        } else {
+            play();
+        }
+    }
+
+    // Intentar autoplay al cargar
+    play();
+
+    // Fallback: arrancar en primera interacción si autoplay fue bloqueado
+    function onFirstInteraction() {
+        if (!playing) play();
+        window.removeEventListener('scroll', onFirstInteraction);
+        document.removeEventListener('touchstart', onFirstInteraction);
+        document.removeEventListener('click', onFirstInteraction);
+    }
+    window.addEventListener('scroll', onFirstInteraction, { passive: true });
+    document.addEventListener('touchstart', onFirstInteraction, { passive: true });
+    document.addEventListener('click', onFirstInteraction);
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggle();
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadGuestData();
     updateCountdown();
     setInterval(updateCountdown, 1000);
     initAnimations();
     initScrollProgress();
+    initAudio();
 });
