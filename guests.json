@@ -2,86 +2,91 @@
   {
     "id": "01-torres",
     "name": "Luis Fernando Torres Núñez",
-    "display": "Fernando Torres, esposa e hija"
+    "display": "Sr. Fernando Torres, Sra. Lina Rodriguez, Srta. Hanna Torres."
   },
   {
     "id": "02-torres",
     "name": "Luis Fernando Torres Perdomo",
-    "display": "Luis Torres, novia e hija"
+    "display": "Sr. Luis Fernando Torres, Sra. Daniela Escobar y su hija Luciana."
   },
   {
     "id": "03-torres",
     "name": "Karla Geraldine Torres",
-    "display": "Karla Torres, esposo e hija"
+    "display": "Sra. Karla Torres, Sr. Santiago Tibaduiza y su hija Paulina."
   },
   {
     "id": "04-nunez",
     "name": "María Luz Núñez",
-    "display": "María Luz Núñez"
+    "display": "Sra. Maria Luz Nuñez."
   },
   {
     "id": "05-perdomo",
     "name": "Martha Cristina Perdomo Salas",
-    "display": "Martha Perdomo y Silvia Salas"
+    "display": "Sra. Martha Perdomo y Sra. Silvia Salas."
   },
   {
     "id": "06-perdomo",
-    "name": "Gemma Otilia Perdomo Salas",
-    "display": "Gema Perdomo, esposo e hijo"
+    "name": "Gema Otilia Perdomo Salas",
+    "display": "Sra. Gema Perdomo, Sr. Luis Chavarro y su hijo Juan Jose."
   },
   {
     "id": "07-perdomo",
     "name": "Oscar Eduardo Chavarro Perdomo",
-    "display": "Oscar Chavarro, esposa e hija"
+    "display": "Sr. Oscar Chavarro, Sra. Carolina Gomez y su hija Juanita."
   },
   {
     "id": "08-dussan",
     "name": "Omar Dussan Coronado",
-    "display": "Omar Dussan y Lucelida Ipuz"
+    "display": "Queridos Papá y Mamá."
   },
   {
     "id": "09-ipuz",
     "name": "Andrea Katherine Ipuz García",
-    "display": "Andrea Ipuz, novio e hijo"
+    "display": "Sra. Andrea Ipuz, Sr. Oscar Losada y su hijo Diego."
   },
   {
     "id": "10-dussan",
     "name": "Milena Dussan Coronado",
-    "display": "Milena Dussan e hijo"
+    "display": "Sra. Milena Dussan y su hijo Juan Diego."
   },
   {
     "id": "11-ipuz",
     "name": "Olvein Ipuz García",
-    "display": "Olvein Ipuz, esposa e hija"
+    "display": "Sr. Olvein Ipuz, Sra. Arcinedes Tápielo y su hija Sofia."
   },
   {
     "id": "12-velasquez",
     "name": "Nelson Velasquez",
-    "display": "Nelson Velasquez"
+    "display": "Sr. Nelson Velazquez."
   },
   {
     "id": "13-canacue",
     "name": "Jeisson Canacue",
-    "display": "Jeisson Canacue"
+    "display": "Sr. Jeisson Canacue."
   },
   {
     "id": "14-soza",
     "name": "Jorge Augusto Sosa Echeverry",
-    "display": "Jorge Sosa y novia"
+    "display": "Sr. Jorge Sosa, Sra. Camila Sanchez."
   },
   {
     "id": "15-dussan",
     "name": "Silvia Dussan Coronado",
-    "display": "Silvia Dussan y esposo"
+    "display": "Sra. Silvia Dussan, Sr. Jesus Suarez."
   },
   {
     "id": "16-ipuz",
     "name": "Lucila Ipuz García",
-    "display": "Lucila Ipuz"
+    "display": "Sra. Lucila Ipuz."
   },
   {
-    "id": "17-guzman",
+    "id": "17-ramirez",
     "name": "Jose Alejandro Ramirez",
-    "display": "Alejandro Ramirez y esposa"
+    "display": "Sr. Alejandro Ramirez, Sra. Ana Guzman."
+  },
+  {
+    "id": "18-didier",
+    "name": "Didier Leguizamo",
+    "display": "Sr. Didier Leguizamo."
   }
 ]
