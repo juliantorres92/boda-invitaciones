@@ -686,7 +686,7 @@ section > .section-title {
 
 /* === Esquinas diagonales — ceremony === */
 .ceremony .ceremony-corner img {
-    width: clamp(338px, 91vw, 494px);
+    width: clamp(372px, 100vw, 543px);
     opacity: 0.90;
 }
 .ceremony .ceremony-corner.top-left     { top: -4%; left: -4%; }
@@ -707,6 +707,18 @@ section > .section-title {
 .recepcion .recepcion-corner.bottom-right img { transform: translateY(9%); }
 .recepcion .deco-corner { z-index: 3; }
 
+/* === Esquinas diagonales — families === */
+.families .family-corner img {
+    width: clamp(338px, 91vw, 494px);
+    opacity: 0.90;
+}
+.families .family-corner.top-left     { top: -2%; left: 16%; }
+.families .family-corner.bottom-right { bottom: -2%; right: 16%; }
+.families { overflow: clip; overflow-clip-margin: 60px; }
+.families .family-corner.top-left img    { transform: scale(-1, -1); }
+.families .family-corner.bottom-right img { transform: none; }
+.families .deco-corner { z-index: 3; }
+
 /* === Divisor floral SVG === */
 .floral-divider {
     display: flex;
@@ -722,6 +734,16 @@ section > .section-title {
 
 /* === Anillos en ceremony === */
 .ceremony-rings {
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: clamp(202px, 49vw, 288px);
+    height: auto;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+/* === Copas en recepcion === */
+.reception-glasses {
     display: block;
     margin: 0 auto 1.5rem;
     width: clamp(140px, 34vw, 200px);
