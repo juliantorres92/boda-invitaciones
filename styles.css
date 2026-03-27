@@ -44,8 +44,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 10px;
-    scroll-snap-type: y mandatory;
     overflow-x: hidden;
 }
 
@@ -63,9 +61,11 @@ body {
 
 .invitation {
     max-width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
+    height: 100vh;
+    height: 100svh;
+    height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
     background: var(--white);
 }
 
@@ -85,6 +85,7 @@ section {
     position: relative;
     overflow: clip;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 section > .section-title {
@@ -887,3 +888,136 @@ section > .section-title {
 }
 .music-toggle:hover { opacity: 1; }
 .music-toggle.paused { opacity: 0.4; }
+
+/* ============================================================
+   ANIMACIONES POR SECCIÓN — Fase 1 (PRD 003)
+   ============================================================ */
+
+/* --- Keyframes compartidos --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 1. Welcome: reveal escalonado del nombre --- */
+.welcome.visible .guest-name {
+    animation: nameReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+@keyframes nameReveal {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.welcome.visible .section-intro {
+    animation: fadeInUp 1s ease-out 1.2s both;
+}
+.welcome.visible .cupos-info {
+    animation: fadeInUp 0.8s ease-out 1.8s both;
+}
+
+/* --- 2. Families: stagger entre bloques familiares --- */
+.families .family {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.families.visible .family {
+    opacity: 1;
+    transform: translateY(0);
+}
+.families.visible .family:nth-child(4) { transition-delay: 0.5s; }
+.families.visible .family:nth-child(5) { transition-delay: 1.0s; }
+.families.visible .family:nth-child(6) { transition-delay: 1.5s; }
+
+/* --- 3. Ceremony: scale-in suave en anillos --- */
+.ceremony .ceremony-rings {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ceremony.visible .ceremony-rings {
+    opacity: 0.85;
+    transform: scale(1);
+    transition-delay: 0.5s;
+}
+
+/* --- 3b. Recepcion: scale-in suave en copas --- */
+.recepcion .reception-glasses {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.recepcion.visible .reception-glasses {
+    opacity: 0.85;
+    transform: scale(1);
+    transition-delay: 0.5s;
+}
+
+/* --- 4. Countdown: overflow para flip de dígitos --- */
+.time-unit {
+    overflow: hidden;
+}
+.time-unit span {
+    display: block;
+}
+
+/* --- 5. Confirmación: entrada retardada del CTA --- */
+.confirmacion .whatsapp-btn {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    transition: opacity 1s ease-out,
+                transform 1s cubic-bezier(0.34, 1.2, 0.64, 1),
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+.confirmacion.visible .whatsapp-btn {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.8s;
+}
+.confirmacion .confirm-text {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+.confirmacion.visible .confirm-text {
+    opacity: 0.8;
+    transition-delay: 1.4s;
+}
+
+/* Feedback táctil en móvil */
+@media (hover: none) and (pointer: coarse) {
+    .whatsapp-btn:active {
+        transform: scale(0.97);
+    }
+}
+
+/* --- Accesibilidad: respetar reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+    .welcome.visible .guest-name,
+    .welcome.visible .section-intro,
+    .welcome.visible .cupos-info {
+        animation-duration: 0.01ms;
+        animation-delay: 0ms;
+    }
+    .families .family {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms !important;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .ceremony .ceremony-rings {
+        transition-duration: 0.01ms;
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    .confirmacion .whatsapp-btn {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms;
+        opacity: 1;
+        transform: none;
+    }
+    .confirmacion .confirm-text {
+        transition-duration: 0.01ms;
+        transition-delay: 0ms;
+        opacity: 0.8;
+    }
+}

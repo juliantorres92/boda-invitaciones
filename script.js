@@ -44,15 +44,37 @@ function setupWhatsappLink(guest) {
     btn.href = whatsappUrl;
 }
 
+function flipDigit(el, newValue) {
+    const formatted = String(newValue).padStart(2, '0');
+    if (el.textContent === formatted) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+        el.textContent = formatted;
+        return;
+    }
+
+    el.animate([
+        { transform: 'translateY(0)', opacity: 1 },
+        { transform: 'translateY(-14px)', opacity: 0 }
+    ], { duration: 180, easing: 'ease-in', fill: 'forwards' }).onfinish = () => {
+        el.textContent = formatted;
+        el.animate([
+            { transform: 'translateY(14px)', opacity: 0 },
+            { transform: 'translateY(0)', opacity: 1 }
+        ], { duration: 220, easing: 'ease-out', fill: 'forwards' });
+    };
+}
+
 function updateCountdown() {
     const now = new Date();
     const diff = WEDDING_DATE - now;
 
     if (diff <= 0) {
-        document.getElementById('days').textContent = '00';
-        document.getElementById('hours').textContent = '00';
-        document.getElementById('minutes').textContent = '00';
-        document.getElementById('seconds').textContent = '00';
+        flipDigit(document.getElementById('days'), 0);
+        flipDigit(document.getElementById('hours'), 0);
+        flipDigit(document.getElementById('minutes'), 0);
+        flipDigit(document.getElementById('seconds'), 0);
         return;
     }
 
@@ -61,15 +83,16 @@ function updateCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    flipDigit(document.getElementById('days'), days);
+    flipDigit(document.getElementById('hours'), hours);
+    flipDigit(document.getElementById('minutes'), minutes);
+    flipDigit(document.getElementById('seconds'), seconds);
 }
 
 function initAnimations() {
     const sections = document.querySelectorAll('.animate-on-scroll');
-    
+    const container = document.querySelector('.invitation');
+
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -77,6 +100,7 @@ function initAnimations() {
             }
         });
     }, {
+        root: container,
         threshold: 0.3
     });
 
@@ -87,18 +111,19 @@ function initScrollProgress() {
     const progressBar = document.createElement('div');
     progressBar.className = 'scroll-progress';
     document.body.appendChild(progressBar);
+    const container = document.querySelector('.invitation');
 
     function updateProgress() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const progress = (scrollTop / docHeight) * 100;
+        const scrollTop = container.scrollTop;
+        const scrollHeight = container.scrollHeight - container.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
         progressBar.style.width = progress + '%';
     }
 
-    window.addEventListener('scroll', () => {
+    container.addEventListener('scroll', () => {
         requestAnimationFrame(updateProgress);
     }, { passive: true });
-    
+
     updateProgress();
 }
 
@@ -130,13 +155,14 @@ function initAudio() {
     play();
 
     // Fallback: arrancar en primera interacción si autoplay fue bloqueado
+    const container = document.querySelector('.invitation');
     function onFirstInteraction() {
         if (!playing) play();
-        window.removeEventListener('scroll', onFirstInteraction);
+        container.removeEventListener('scroll', onFirstInteraction);
         document.removeEventListener('touchstart', onFirstInteraction);
         document.removeEventListener('click', onFirstInteraction);
     }
-    window.addEventListener('scroll', onFirstInteraction, { passive: true });
+    container.addEventListener('scroll', onFirstInteraction, { passive: true });
     document.addEventListener('touchstart', onFirstInteraction, { passive: true });
     document.addEventListener('click', onFirstInteraction);
 
