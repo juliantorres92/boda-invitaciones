@@ -737,6 +737,18 @@ section > .section-title {
 .confirmacion .confirm-corner.bottom-right img { transform: none; }
 .confirmacion .deco-corner { z-index: 3; }
 
+/* === Decoración floral — countdown === */
+.countdown-deco {
+    display: block;
+    width: clamp(324px, 86vw, 486px);
+    margin: 0 auto;
+    opacity: 0.65;
+    pointer-events: none;
+}
+.countdown-deco-bottom {
+    transform: scaleY(-1);
+}
+
 /* === Divisor floral SVG === */
 .floral-divider {
     display: flex;
