@@ -845,7 +845,7 @@ section > .section-title {
 /* Esquinas diagonales: top-left y bottom-right */
 .cover .cover-corner img {
     width: clamp(390px, 95vw, 630px);
-    opacity: 0.92;
+    opacity: 1;
 }
 
 /* top-left: espejo horizontal y vertical del asset (bouquet gira a esquina superior-izquierda) */
