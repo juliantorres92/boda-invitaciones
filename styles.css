@@ -693,7 +693,7 @@ section > .section-title {
 /* === Esquinas diagonales — recepcion === */
 .recepcion .recepcion-corner img {
     width: clamp(338px, 91vw, 494px);
-    opacity: 0.90;
+    opacity: 1;
 }
 .recepcion .recepcion-corner.top-left     { top: 0; left: 0; }
 .recepcion .recepcion-corner.bottom-right { bottom: 0; right: 0; }
@@ -716,7 +716,7 @@ section > .section-title {
 /* === Esquinas diagonales — welcome === */
 .welcome .welcome-corner img {
     width: clamp(274px, 74vw, 401px);
-    opacity: 0.70;
+    opacity: 0.55;
 }
 .welcome .welcome-corner.top-left     { top: -1%; left: 27%; }
 .welcome .welcome-corner.bottom-right { bottom: -1%; right: 27%; }
