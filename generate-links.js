@@ -10,4 +10,3 @@ guests.forEach(guest => {
 });
 
 console.log(`Total: ${guests.length} invitados`);
-console.log(`Cupos totales: ${guests.reduce((sum, g) => sum + g.cupos, 0)}`);
