@@ -163,14 +163,8 @@ section > .section-title {
 }
 
 .welcome .section-intro {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1rem, 4vw, 1.6rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--accent-color);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    opacity: 0.9;
+    font-family: var(--font-subtitle);
+    font-style: normal;
 }
 
 .welcome .guest-name {
@@ -718,6 +712,30 @@ section > .section-title {
 .families .family-corner.top-left img    { transform: scale(-1, -1); }
 .families .family-corner.bottom-right img { transform: none; }
 .families .deco-corner { z-index: 3; }
+
+/* === Esquinas diagonales — welcome === */
+.welcome .welcome-corner img {
+    width: clamp(274px, 74vw, 401px);
+    opacity: 0.70;
+}
+.welcome .welcome-corner.top-left     { top: -1%; left: 27%; }
+.welcome .welcome-corner.bottom-right { bottom: -1%; right: 27%; }
+.welcome { overflow: clip; overflow-clip-margin: 60px; }
+.welcome .welcome-corner.top-left img    { transform: scale(-1, -1); }
+.welcome .welcome-corner.bottom-right img { transform: none; }
+.welcome .deco-corner { z-index: 3; }
+
+/* === Esquinas diagonales — confirmacion === */
+.confirmacion .confirm-corner img {
+    width: clamp(274px, 74vw, 401px);
+    opacity: 0.55;
+}
+.confirmacion .confirm-corner.top-left     { top: -2%; left: 27%; }
+.confirmacion .confirm-corner.bottom-right { bottom: -2%; right: 27%; }
+.confirmacion { overflow: clip; overflow-clip-margin: 60px; }
+.confirmacion .confirm-corner.top-left img    { transform: scale(-1, -1); }
+.confirmacion .confirm-corner.bottom-right img { transform: none; }
+.confirmacion .deco-corner { z-index: 3; }
 
 /* === Divisor floral SVG === */
 .floral-divider {
