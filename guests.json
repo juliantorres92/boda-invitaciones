@@ -1,32 +1,32 @@
 [
   {
     "id": "01-torres",
-    "name": "Luis Fernando Torres Núñez",
+    "name": "Querido Papá.",
     "display": "Sr. Fernando Torres, Sra. Lina Rodriguez, Srta. Hanna Torres."
   },
   {
     "id": "02-torres",
-    "name": "Luis Fernando Torres Perdomo",
+    "name": "Querido Hermano.",
     "display": "Sr. Luis Fernando Torres, Sra. Daniela Escobar y su hija Luciana."
   },
   {
     "id": "03-torres",
-    "name": "Karla Geraldine Torres",
+    "name": "Querida Hermana.",
     "display": "Sra. Karla Torres, Sr. Santiago Tibaduiza y su hija Paulina."
   },
   {
     "id": "04-nunez",
-    "name": "María Luz Núñez",
+    "name": "Querida Abuela.",
     "display": "Sra. Maria Luz Nuñez."
   },
   {
     "id": "05-perdomo",
-    "name": "Martha Cristina Perdomo Salas",
+    "name": "Querida tía.",
     "display": "Sra. Martha Perdomo y Sra. Silvia Salas."
   },
   {
     "id": "06-perdomo",
-    "name": "Gema Otilia Perdomo Salas",
+    "name": "Querida tía.",
     "display": "Sra. Gema Perdomo, Sr. Luis Chavarro y su hijo Juan Jose."
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "id": "08-dussan",
-    "name": "Omar Dussan Coronado",
-    "display": "Queridos Papá y Mamá."
+    "name": "Queridos Papá y Mamá.",
+    "display": "Sra. Lucelida Ipuz y Sr. Omar Dussan"
   },
   {
     "id": "09-ipuz",
-    "name": "Andrea Katherine Ipuz García",
+    "name": "Querida Hermana.",
     "display": "Sra. Andrea Ipuz, Sr. Oscar Losada y su hijo Diego."
   },
   {
