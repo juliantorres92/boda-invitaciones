@@ -34,14 +34,16 @@ async function loadGuestData() {
 
 function setupWhatsappLink(guest) {
     const btn = document.getElementById('whatsappBtn');
-    let message = 'Hola, confirmamos nuestra asistencia a la boda de Yessica y Julian. ';
-    
+    let message;
     if (guest) {
-        message += `Nombre: ${guest.name}. Acompañantes: ${guest.display}. `;
+        const count = (guest.display.match(/\bSr\b|\bSra\b|\bSrta\b/g) || []).length;
+        message = count === 1
+            ? 'Hola, confirmo mi asistencia a la boda de Yessica y Julian.'
+            : 'Hola, confirmamos nuestra asistencia a la boda de Yessica y Julian.';
+    } else {
+        message = 'Hola, confirmamos nuestra asistencia a la boda de Yessica y Julian.';
     }
-    
-    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
-    btn.href = whatsappUrl;
+    btn.href = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function flipDigit(el, newValue) {
