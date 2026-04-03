@@ -31,9 +31,6 @@
     --section-pt-mobile:  3.5rem;
     --section-pb-mobile:  4.5rem;
     --section-px-mobile:  1rem;
-
-    --divider-bottom-desktop: 2rem;
-    --divider-bottom-mobile:  1.5rem;
 }
 
 * {
@@ -158,23 +155,6 @@ section > .section-title {
     margin-bottom: 2rem;
 }
 
-.section-divider {
-    position: absolute;
-    bottom: var(--divider-bottom-desktop);
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.section-divider span {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-color);
-    opacity: 0.5;
-    display: inline-block;
-    margin: 0 4px;
-}
-
 @media (max-width: 600px) {
     section {
         min-height: 100dvh;
@@ -182,10 +162,6 @@ section > .section-title {
         padding-bottom: var(--section-pb-mobile);
         padding-left:   var(--section-px-mobile);
         padding-right:  var(--section-px-mobile);
-    }
-
-    .section-divider {
-        bottom: var(--divider-bottom-mobile);
     }
 }
 
@@ -277,15 +253,6 @@ section > .section-title {
 .cover-content {
     position: relative;
     z-index: 2;
-}
-
-.cover .section-divider {
-    z-index: 2;
-}
-
-.cover .section-divider span {
-    background: var(--accent-color);
-    opacity: 0.7;
 }
 
 /* --- Cover: overrides de tipografía y jerarquía visual --- */
@@ -567,8 +534,7 @@ section > .section-title {
 /* Cover: contenido oculto hasta que reciba .visible */
 .cover .section-title,
 .cover .section-subtitle,
-.cover .date,
-.cover .section-divider {
+.cover .date {
     opacity: 0;
 }
 
@@ -582,10 +548,6 @@ section > .section-title {
 
 .cover.visible .date {
     animation: fadeInUp 1s ease 1.2s forwards;
-}
-
-.cover.visible .section-divider {
-    animation: fadeIn 1s ease 1.6s forwards;
 }
 
 /* ======================================
@@ -723,7 +685,7 @@ section > .section-title {
 /* === Decoración floral — countdown === */
 .countdown-deco {
     display: block;
-    width: clamp(324px, 86vw, 486px);
+    width: clamp(324px, 86vw, 340px);
     margin: 0 auto;
     opacity: 0.65;
     pointer-events: none;
@@ -819,7 +781,6 @@ section > .section-title {
 /* Z-index */
 .cover .deco-corner      { z-index: 3; }
 .cover .cover-content    { z-index: 4; }
-.cover .section-divider  { z-index: 4; }
 
 /* === Botón flotante de música === */
 .music-toggle {
@@ -965,7 +926,8 @@ section > .section-title {
 
 /* Feedback táctil en móvil */
 @media (hover: none) and (pointer: coarse) {
-    .whatsapp-btn:active {
+    .whatsapp-btn:active,
+    .map-link:active {
         transform: scale(0.97);
     }
 }
@@ -1006,8 +968,7 @@ section > .section-title {
     }
     .cover.visible .section-title,
     .cover.visible .section-subtitle,
-    .cover.visible .date,
-    .cover.visible .section-divider {
+    .cover.visible .date {
         animation-duration: 0.01ms !important;
         animation-delay: 0ms !important;
         opacity: 1;
