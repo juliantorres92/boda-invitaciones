@@ -248,6 +248,8 @@ section > .section-title {
     justify-content: center;
     position: relative;
     padding: 0;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .cover-content {
@@ -630,7 +632,7 @@ section > .section-title {
 }
 .ceremony .ceremony-corner.top-left     { top: -4%; left: -4%; }
 .ceremony .ceremony-corner.bottom-right { bottom: -4%; right: -4%; }
-.ceremony { overflow: clip; overflow-clip-margin: 60px; }
+.ceremony { overflow-x: clip; overflow-y: visible; }
 .ceremony .ceremony-corner.top-left img    { transform: scale(-1, -1); }
 .ceremony .ceremony-corner.bottom-right img { transform: none; }
 .ceremony .deco-corner { z-index: 3; }
@@ -645,6 +647,7 @@ section > .section-title {
 .recepcion .recepcion-corner.top-left img    { transform: scale(-1, -1) translateY(9%); }
 .recepcion .recepcion-corner.bottom-right img { transform: translateY(9%); }
 .recepcion .deco-corner { z-index: 3; }
+.recepcion { overflow-x: clip; overflow-y: visible; }
 
 /* === Esquinas diagonales — families === */
 .families .family-corner img {
@@ -653,7 +656,7 @@ section > .section-title {
 }
 .families .family-corner.top-left     { top: -2%; left: 16%; }
 .families .family-corner.bottom-right { bottom: -2%; right: 16%; }
-.families { overflow: clip; overflow-clip-margin: 60px; }
+.families { overflow-x: clip; overflow-y: visible; }
 .families .family-corner.top-left img    { transform: scale(-1, -1); }
 .families .family-corner.bottom-right img { transform: none; }
 .families .deco-corner { z-index: 3; }
@@ -665,7 +668,7 @@ section > .section-title {
 }
 .welcome .welcome-corner.top-left     { top: -1%; left: 27%; }
 .welcome .welcome-corner.bottom-right { bottom: -1%; right: 27%; }
-.welcome { overflow: clip; overflow-clip-margin: 60px; }
+.welcome { overflow-x: clip; overflow-y: visible; }
 .welcome .welcome-corner.top-left img    { transform: scale(-1, -1); }
 .welcome .welcome-corner.bottom-right img { transform: none; }
 .welcome .deco-corner { z-index: 3; }
@@ -677,7 +680,7 @@ section > .section-title {
 }
 .confirmacion .confirm-corner.top-left     { top: -2%; left: 27%; }
 .confirmacion .confirm-corner.bottom-right { bottom: -2%; right: 27%; }
-.confirmacion { overflow: clip; overflow-clip-margin: 60px; }
+.confirmacion { overflow-x: clip; overflow-y: visible; }
 .confirmacion .confirm-corner.top-left img    { transform: scale(-1, -1); }
 .confirmacion .confirm-corner.bottom-right img { transform: none; }
 .confirmacion .deco-corner { z-index: 3; }
