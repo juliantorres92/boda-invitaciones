@@ -333,25 +333,6 @@ section > .section-title {
     opacity: 0.85;
 }
 
-.save-the-date {
-    font-family: var(--font-subtitle);
-    font-size: clamp(0.8rem, 3vw, 1rem);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent-color);
-    margin-bottom: 2rem;
-}
-
-.names {
-    font-family: var(--font-title);
-    font-size: clamp(2.5rem, 10vw, 4rem);
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    color: var(--primary-color);
-}
-
 .date {
     font-family: var(--font-text);
     font-size: var(--text-size);
@@ -376,28 +357,8 @@ section > .section-title {
     color: var(--text-color);
 }
 
-.event h2 {
-    font-family: var(--font-title);
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
 .event-details {
     font-family: var(--font-text);
-}
-
-.event-place {
-    font-family: var(--font-subtitle);
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .event-time {
@@ -540,46 +501,6 @@ section > .section-title {
 .whatsapp-btn:hover {
     background: rgba(63, 79, 34, 0.06);
     opacity: 0.85;
-}
-
-.closing {
-    background: var(--verde-oliva) !important;
-    color: var(--white);
-    min-height: auto;
-    padding: var(--sp-4xl) var(--sp-xl);
-    scroll-snap-align: none;
-}
-
-@media (max-width: 600px) {
-    .closing {
-        padding: var(--sp-3xl) var(--sp-lg);
-    }
-}
-
-.closing .section-divider span {
-    background: var(--beige);
-    opacity: 0.6;
-}
-
-.closing-message {
-    font-family: var(--font-title);
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    font-style: italic;
-    margin-bottom: 1rem;
-}
-
-.closing-invite {
-    font-family: var(--font-text);
-    font-size: var(--text-size);
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-.closing-names {
-    font-family: var(--font-title);
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-style: italic;
-    color: var(--beige);
 }
 
 .footer {
@@ -730,8 +651,7 @@ section > .section-title {
 /* Blanco crema: cover(1), families(3), after-ceremony(5), countdown(7), closing(9) */
 .families,
 .after-ceremony,
-.countdown,
-.closing {
+.countdown {
     background-color: var(--white);
     background-image: url('assets/images/textures/paper-vintage-opt.webp');
     background-size: cover;
@@ -829,8 +749,6 @@ section > .section-title {
     width: 100%;
     max-width: 200px;
 }
-.closing .floral-divider { color: var(--beige); opacity: 0.70; }
-
 /* === Anillos en ceremony === */
 .ceremony-rings {
     display: block;
@@ -864,26 +782,6 @@ section > .section-title {
     display: block;
 }
 
-/* === Decoración esquina — closing === */
-.closing-deco-corner {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: clamp(160px, 38vw, 260px);
-    height: auto;
-    pointer-events: none;
-    user-select: none;
-    opacity: 0.72;
-    z-index: 1;
-}
-
-@media (max-width: 600px) {
-    .closing-deco-corner {
-        width: clamp(120px, 42vw, 200px);
-        opacity: 0.65;
-    }
-}
-
 /* === Marco interior — todas las secciones === */
 .cover::after {
     content: '';
@@ -899,8 +797,7 @@ section > .section-title {
 .after-ceremony::after,
 .recepcion::after,
 .countdown::after,
-.confirmacion::after,
-.closing::after {
+.confirmacion::after {
     content: '';
     position: absolute;
     inset: 2%;
