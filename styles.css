@@ -95,9 +95,9 @@ body {
 
 .envelope-video {
     position: absolute;
-    inset: -8%;
-    width: 116%;
-    height: 116%;
+    inset: -3%;
+    width: 106%;
+    height: 106%;
     object-fit: cover;
     object-position: center;
     z-index: 2;
