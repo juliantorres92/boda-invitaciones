@@ -28,7 +28,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;500;600&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@300;400;500&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="invitation">
+    <!-- Splash screen — sobre con video de apertura -->
+    <div class="splash" id="splash" role="button" tabindex="0" aria-label="Toca para abrir la invitación">
+        <video class="envelope-video" muted playsinline preload="auto" aria-hidden="true">
+            <source src="assets/videos/envelope-open.webm" type="video/webm">
+            <source src="assets/videos/envelope-open.mp4" type="video/mp4">
+        </video>
+        <span class="splash-hint">Toca para abrir</span>
+    </div>
+
+    <main class="invitation" style="visibility: hidden;">
         <section class="cover animate-on-scroll">
             <div class="deco-corner cover-corner top-left" aria-hidden="true">
                 <img src="assets/images/florals/lily-corner.webp" alt="" loading="eager">

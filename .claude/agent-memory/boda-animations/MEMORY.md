@@ -8,3 +8,4 @@
 - Animaciones de cover ya implementadas en CSS: fadeInDown/fadeIn/fadeInUp escalonados con delays 0.3s/0.8s/1.2s/1.6s
 - Hover en botones (`.whatsapp-btn`, `.map-link`) solo usa background+opacity actualmente — sin transform
 - Countdown actualiza con textContent puro, sin animación de transición
+- PRD 005 (propuesta 2026-03-30): correcciones Fase 2 — bug reduced-motion en reception-glasses, timings fuera de rango (0.8s–1.5s vs 300–600ms recomendados), stagger countdown, animación after-ceremony, section-divider, táctil map-link

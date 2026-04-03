@@ -15,3 +15,4 @@
 - [project_corner_lily_v4.md](project_corner_lily_v4.md) — VERSION ACTUAL: flores grandes + 5 colores desaturados/vintage + follaje alargado/fluido + tono sepia antiguo
 - [project_reception_champagne.md](project_reception_champagne.md) — Prompts para copas de champagne/vino acuarela en sección Reception
 - [project_corner_vintage_berries.md](project_corner_vintage_berries.md) — SUPERADO por v4: usaba rosa vintage palido #DCC5C7; ahora el prompt 5 usa vino ciruela #9B4F6B
+- [project_envelope_video_prompts.md](project_envelope_video_prompts.md) — Prompts video AI (Runway/Kling/Pika) para sobre abriendose como splash screen 9:16

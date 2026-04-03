@@ -59,6 +59,72 @@ body {
     padding-right: env(safe-area-inset-right);
 }
 
+/* ======================================
+   SPLASH SCREEN — SOBRE CON SELLO DE CERA
+   ====================================== */
+
+.splash {
+    position: fixed;
+    inset: -1px;
+    z-index: 1001;
+    background-color: #9E9876;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.splash-hint {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-family: var(--font-text);
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1s forwards;
+}
+
+/* --- Keyframes del sobre --- */
+
+@keyframes envelopeReveal {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.envelope-video {
+    position: absolute;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.splash.revealing {
+    animation: envelopeReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    pointer-events: none;
+}
+
+/* ======================================
+   MUSIC TOGGLE & SCROLL PROGRESS — INITIAL STATES
+   ====================================== */
+
+.music-toggle.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-progress.hidden {
+    opacity: 0;
+}
+
 .invitation {
     max-width: 100%;
     height: 100vh;
@@ -583,27 +649,27 @@ section > .section-title {
     to   { opacity: 1; }
 }
 
+/* Cover: contenido oculto hasta que reciba .visible */
 .cover .section-title,
 .cover .section-subtitle,
 .cover .date,
 .cover .section-divider {
     opacity: 0;
-    animation-fill-mode: forwards;
 }
 
-.cover .section-title {
+.cover.visible .section-title {
     animation: fadeInDown 1s ease 0.3s forwards;
 }
 
-.cover .section-subtitle {
+.cover.visible .section-subtitle {
     animation: fadeIn 1s ease 0.8s forwards;
 }
 
-.cover .date {
+.cover.visible .date {
     animation: fadeInUp 1s ease 1.2s forwards;
 }
 
-.cover .section-divider {
+.cover.visible .section-divider {
     animation: fadeIn 1s ease 1.6s forwards;
 }
 
@@ -932,7 +998,7 @@ section > .section-title {
 .ceremony .ceremony-rings {
     opacity: 0;
     transform: scale(0.92);
-    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 .ceremony.visible .ceremony-rings {
     opacity: 0.85;
@@ -944,7 +1010,7 @@ section > .section-title {
 .recepcion .reception-glasses {
     opacity: 0;
     transform: scale(0.92);
-    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 .recepcion.visible .reception-glasses {
     opacity: 0.85;
@@ -1019,5 +1085,17 @@ section > .section-title {
         transition-duration: 0.01ms;
         transition-delay: 0ms;
         opacity: 0.8;
+    }
+    .splash.revealing {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+    }
+    .cover.visible .section-title,
+    .cover.visible .section-subtitle,
+    .cover.visible .date,
+    .cover.visible .section-divider {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
+        opacity: 1;
     }
 }

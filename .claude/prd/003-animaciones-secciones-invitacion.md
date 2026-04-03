@@ -1,6 +1,6 @@
 # PRD 003 — Animaciones por sección para la invitación
 
-**Estado**: Pendiente de aprobación
+**Estado**: Implementado — 2026-03-30
 **Fecha propuesta**: 2026-03-26
 **Agente**: boda-animations
 **Archivos afectados**: `styles.css`, `script.js` (flip countdown)

@@ -134,12 +134,29 @@ function initAudio() {
     const btn = document.getElementById('musicToggle');
     let playing = false;
 
-    audio.volume = 0.1;
+    audio.volume = 0;
+
+    function fadeIn(target, duration) {
+        const steps = 20;
+        const increment = target / steps;
+        const interval = duration / steps;
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                audio.volume = target;
+                clearInterval(timer);
+            } else {
+                audio.volume = current;
+            }
+        }, interval);
+    }
 
     function play() {
         audio.play().then(() => {
             playing = true;
             btn.classList.remove('paused');
+            fadeIn(0.1, 2000);
         }).catch(() => {});
     }
 
@@ -149,29 +166,107 @@ function initAudio() {
             playing = false;
             btn.classList.add('paused');
         } else {
-            play();
+            audio.volume = 0.1;
+            audio.play().then(() => {
+                playing = true;
+                btn.classList.remove('paused');
+            }).catch(() => {});
         }
     }
-
-    // Intentar autoplay al cargar
-    play();
-
-    // Fallback: arrancar en primera interacción si autoplay fue bloqueado
-    const container = document.querySelector('.invitation');
-    function onFirstInteraction() {
-        if (!playing) play();
-        container.removeEventListener('scroll', onFirstInteraction);
-        document.removeEventListener('touchstart', onFirstInteraction);
-        document.removeEventListener('click', onFirstInteraction);
-    }
-    container.addEventListener('scroll', onFirstInteraction, { passive: true });
-    document.addEventListener('touchstart', onFirstInteraction, { passive: true });
-    document.addEventListener('click', onFirstInteraction);
 
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
         toggle();
     });
+
+    return { play };
+}
+
+function initSplash(onOpen) {
+    const splash = document.getElementById('splash');
+    const invitation = document.querySelector('.invitation');
+    const musicToggle = document.getElementById('musicToggle');
+    const progressBar = document.querySelector('.scroll-progress');
+
+    function showControls() {
+        musicToggle.classList.remove('hidden');
+        if (progressBar) progressBar.classList.remove('hidden');
+    }
+
+    function revealInvitation() {
+        invitation.style.visibility = 'visible';
+        const cover = invitation.querySelector('.cover');
+        if (cover) {
+            cover.classList.remove('visible');
+            void cover.offsetWidth;
+            cover.classList.add('visible');
+        }
+    }
+
+    if (!splash) {
+        invitation.style.visibility = 'visible';
+        showControls();
+        const startOnce = () => { onOpen(); };
+        document.addEventListener('touchstart', startOnce, { once: true, passive: true });
+        document.addEventListener('click', startOnce, { once: true });
+        return;
+    }
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    splash.addEventListener('click', () => {
+        // MUST be first: audio play síncrono en user gesture (Safari iOS)
+        onOpen();
+
+        if (prefersReduced) {
+            splash.remove();
+            invitation.style.visibility = 'visible';
+            showControls();
+            const cover = invitation.querySelector('.cover');
+            if (cover) cover.classList.add('visible');
+            return;
+        }
+
+        // Deshabilitar clicks adicionales
+        splash.style.pointerEvents = 'none';
+
+        // Ocultar hint
+        const hint = splash.querySelector('.splash-hint');
+        if (hint) hint.style.display = 'none';
+
+        const video = splash.querySelector('.envelope-video');
+        const canPlay = video && (video.canPlayType('video/webm') || video.canPlayType('video/mp4'));
+
+        if (!canPlay) {
+            splash.classList.add('revealing');
+            setTimeout(() => revealInvitation(), 300);
+            setTimeout(() => { splash.remove(); showControls(); }, 1100);
+            return;
+        }
+
+        // Reproducir video inmediatamente
+        video.play().catch(() => {
+            splash.classList.add('revealing');
+            setTimeout(() => revealInvitation(), 300);
+            setTimeout(() => { splash.remove(); showControls(); }, 1100);
+        });
+
+        // Al terminar el video → revelar invitación
+        video.addEventListener('ended', () => {
+            revealInvitation();
+            splash.classList.add('revealing');
+            setTimeout(() => { splash.remove(); showControls(); }, 800);
+        });
+
+        // Safety timeout: si el video no termina en 8s, forzar transición
+        setTimeout(() => {
+            if (invitation.style.visibility !== 'visible') {
+                revealInvitation();
+                splash.classList.add('revealing');
+                setTimeout(() => { splash.remove(); showControls(); }, 800);
+            }
+        }, 8000);
+    }, { once: true });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -180,5 +275,15 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateCountdown, 1000);
     initAnimations();
     initScrollProgress();
-    initAudio();
+
+    const audioCtrl = initAudio();
+
+    // Ocultar controles hasta que se abra la invitación
+    document.getElementById('musicToggle').classList.add('hidden');
+    const progressBar = document.querySelector('.scroll-progress');
+    if (progressBar) progressBar.classList.add('hidden');
+
+    initSplash(() => {
+        audioCtrl.play();
+    });
 });
