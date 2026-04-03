@@ -272,7 +272,10 @@ function initSplash(onOpen) {
 document.addEventListener('DOMContentLoaded', () => {
     loadGuestData();
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    const countdownTimer = setInterval(() => {
+        updateCountdown();
+        if (WEDDING_DATE - new Date() <= 0) clearInterval(countdownTimer);
+    }, 1000);
     initAnimations();
     initScrollProgress();
 
