@@ -98,5 +98,10 @@
     "id": "20-torres",
     "name": "Querido Tío.",
     "display": "Sr. Alexander Torres, Sra. Eliana Manrique."
+  },    
+  {
+    "id": "21-leguizamo",
+    "name": "Didier Leguizamo.",
+    "display": "Sr. Jose Didier Leguizamo."
   }
 ]
